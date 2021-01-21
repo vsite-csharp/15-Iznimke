@@ -12,8 +12,8 @@ namespace Vsite.CSharp.Iznimke
     {
         public static void Main()
         {
-            // TODO:070 Odkomentirati donju naredbu te događaju UnhandledException pridružiti rukovatelja koji će ispisati podatke o neuhvaćenoj iznimci te pozvati Console.ReadKey() da privremeno zaustavi izvođenje. Pokrenuti program i provjeriti ponašanje.
-            //AppDomain.CurrentDomain.UnhandledException +=
+            // Odkomentirati donju naredbu te događaju UnhandledException pridružiti rukovatelja koji će ispisati podatke o neuhvaćenoj iznimci te pozvati Console.ReadKey() da privremeno zaustavi izvođenje. Pokrenuti program i provjeriti ponašanje.
+            // AppDomain.CurrentDomain.UnhandledException +=
 
             try
             {
@@ -24,6 +24,12 @@ namespace Vsite.CSharp.Iznimke
                 Console.WriteLine("Uhvaćena iznimka: " + e.Message);
             }
             throw new Exception("2");
+        }
+
+        private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            Console.WriteLine(e.ExceptionObject);
+            Console.ReadKey();
         }
     }
 }
