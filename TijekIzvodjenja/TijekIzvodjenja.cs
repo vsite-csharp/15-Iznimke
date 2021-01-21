@@ -21,7 +21,7 @@ namespace Vsite.CSharp.Iznimke
                 Console.WriteLine(ZapočinjeBlokTry);
 
                 Console.WriteLine($"{djeljenjik} dijelim s {djeljitelj}");
-                Console.WriteLine($"Rezultat iznosi : { djeljenjik / djeljitelj}");
+                Console.WriteLine( djeljenjik / djeljitelj);
                 Console.WriteLine($"{djeljenjik} sam podijelio s {djeljitelj}");
 
                 Console.WriteLine(ZavršavaBlokTry);
@@ -30,7 +30,7 @@ namespace Vsite.CSharp.Iznimke
             {
                 Console.WriteLine(BlokCatch);
 
-                Console.WriteLine(e);
+                //Console.WriteLine(e);
             }
             finally
             {
