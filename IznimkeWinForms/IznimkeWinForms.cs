@@ -8,6 +8,7 @@ namespace Vsite.CSharp.Iznimke
 {
     static class IznimkeWinForms
     {
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
