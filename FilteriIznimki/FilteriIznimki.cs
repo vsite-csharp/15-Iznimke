@@ -25,18 +25,19 @@ namespace Vsite.CSharp.Iznimke
 
         public static void IspišiLogaritamBroja(double broj, double baza)
         {
-            // TODO:050 Proširiti blok hvatanja filtrom koji će hvatati iznimku samo za broj <= 0 (ali ne i bazu) i u tom slučaju ispisati gornju poruku NedozvoljeniBroj.
+            // Proširiti blok hvatanja filtrom koji će hvatati iznimku samo za broj <= 0 (ali ne i bazu) i u tom slučaju ispisati gornju poruku NedozvoljeniBroj.
             try
             {
                 Console.WriteLine(FormatIspisa, broj, baza, Math.Logaritam(broj, baza));
             }
-            catch (ArgumentOutOfRangeException e)
+            catch (ArgumentOutOfRangeException e) when (e.ParamName == "broj")
             {
+                Console.WriteLine(NedozvoljeniBroj);
             }
         }
 
-        // TODO:051 Pokrenuti program i provjeriti ispis.
-        // TODO:052 Pokrenuti i provjeriti testove (3 testa iz grupe "FiltriranjeIznimkiPredikatom" moraju proći)
+        //  Pokrenuti program i provjeriti ispis.
+        //  Pokrenuti i provjeriti testove (3 testa iz grupe "FiltriranjeIznimkiPredikatom" moraju proći)
 
         static void Main(string[] args)
         {
