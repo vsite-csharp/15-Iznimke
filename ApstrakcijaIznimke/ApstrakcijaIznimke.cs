@@ -19,7 +19,7 @@ namespace Vsite.CSharp.Iznimke
             }
             catch (ArgumentOutOfRangeException e)
             {
-                Console.WriteLine($"Parametar '{e.ParamName}' ima nedozvoljenu vrijednost {e.ActualValue}");
+                Console.WriteLine($"Parametar '{e.ParamName}' ima nedozvoljenu vrijednost : {e.ActualValue} .");
             }
 
             // TODO:013 Pokrenuti i provjeriti testove (test u grupi "ApstrakcijeIznimke" mora proći)
