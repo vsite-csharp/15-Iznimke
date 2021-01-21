@@ -18,8 +18,7 @@ namespace Vsite.CSharp.Iznimke
                 return System.Math.Log(broj, baza);
             }
         }
-
-
+    
         public const string NedozvoljeniBroj = "Nedozvoljeni broj";
 
         public const string FormatIspisa = "Logaritam broja {0} po bazi {1} = {2}";
