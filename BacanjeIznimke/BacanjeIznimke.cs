@@ -8,14 +8,24 @@ namespace Vsite.CSharp.Iznimke
         {
             // ++TODO:003 Dodati u metodu provjeru je li argument manji od 0 i u tom slučaju baciti iznimku tipa ArgumentOutOfRangeException s porukom: "Argument ne smije biti negativni broj"
             // ++TODO:004 Pokrenuti program i provjeriti što će se dogoditi.
-
+            
             if (broj < 0)
                 throw new ArgumentOutOfRangeException(nameof(broj), "Argument ne smije biti negativan");
+            try
+            { 
 
-            int rezultat = 1;
-            for (int i = 2; i <= broj; ++i)
-                rezultat *= i;
-            return rezultat;
+                int rezultat = 1;
+                for (int i = 2; i <= broj; ++i)
+                    rezultat *= i;
+                return rezultat;
+            }
+            catch (OverflowException)
+            {
+                throw new ArgumentOutOfRangeException(nameof(broj), broj, "Vrijednost argumenta je prevelika");
+                
+            }
+
+            
         }
         // ova funkcija se koristi kasnije
         public static int Povrh(int n, int k)
