@@ -17,7 +17,7 @@ namespace Vsite.CSharp.Iznimke
             InitializeComponent();
         }
 
-        // TODO:080 Pokrenuti program (ne iz Visual Studija!) i pritisnuti tipku na formi. Provjeriti što će se dogoditi nastavi li se izvođenje programa.
+        //  Pokrenuti program (ne iz Visual Studija!) i pritisnuti tipku na formi. Provjeriti što će se dogoditi nastavi li se izvođenje programa.
 
         private void buttonException_Click(object sender, EventArgs e)
         {
