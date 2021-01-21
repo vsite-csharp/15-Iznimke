@@ -9,9 +9,9 @@ namespace Vsite.CSharp.Iznimke
     {
         static void Main(string[] args)
         {
-            // TODO:010 Provjeriti koju iznimku će baciti metoda Faktorjel u donjem kodu.
-            // TODO:011 Promijeniti implementaciju metode Faktorjel tako da za slučaj preljeva baca iznimku tipa ArgumentOutOfRangeException s imenom parametra i vrijednošću argumenta.
-            // TODO:012 Pokrenuti program i provjeriti tijek izvođenja
+            //  Provjeriti koju iznimku će baciti metoda Faktorjel u donjem kodu.
+            //  Promijeniti implementaciju metode Faktorjel tako da za slučaj preljeva baca iznimku tipa ArgumentOutOfRangeException s imenom parametra i vrijednošću argumenta.
+            //  Pokrenuti program i provjeriti tijek izvođenja
 
             try
             {
@@ -22,7 +22,7 @@ namespace Vsite.CSharp.Iznimke
                 Console.WriteLine($"Parametar '{e.ParamName}' ima nedozvoljenu vrijednost {e.ActualValue}");
             }
 
-            // TODO:013 Pokrenuti i provjeriti testove (test u grupi "ApstrakcijeIznimke" mora proći)
+            //  Pokrenuti i provjeriti testove (test u grupi "ApstrakcijeIznimke" mora proći)
 
             Console.WriteLine("GOTOVO!!!");
             Console.ReadKey(false);
