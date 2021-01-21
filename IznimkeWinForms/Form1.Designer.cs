@@ -33,9 +33,10 @@
             // 
             // buttonException
             // 
-            this.buttonException.Location = new System.Drawing.Point(104, 127);
+            this.buttonException.Location = new System.Drawing.Point(115, 168);
+            this.buttonException.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonException.Name = "buttonException";
-            this.buttonException.Size = new System.Drawing.Size(75, 23);
+            this.buttonException.Size = new System.Drawing.Size(100, 28);
             this.buttonException.TabIndex = 0;
             this.buttonException.Text = "&Baci iznimku";
             this.buttonException.UseVisualStyleBackColor = true;
@@ -43,10 +44,11 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(270, 291);
+            this.ClientSize = new System.Drawing.Size(360, 358);
             this.Controls.Add(this.buttonException);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
