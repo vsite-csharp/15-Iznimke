@@ -12,17 +12,31 @@ namespace Vsite.CSharp.Iznimke
 
         public static void IspisTryCatchFinally(int djeljenjik, int djeljitelj)
         {
-            // TODO:030 Donje naredbu umetnuti u try-blok te dodati catch blok za hvatanje iznimke u slučaju dijeljenja s 0 i finally blok. 
-            // TODO:031 Dodati kontrolne ispise gornjih poruka u svaki od tih blokova.
-            // TODO:032 Pokrenuti program i provjeriti što će se ispisati.
-
-            Console.WriteLine($"{djeljenjik} dijelim s {djeljitelj}");
-            Console.WriteLine(djeljenjik / djeljitelj);
-            Console.WriteLine($"{djeljenjik} sam podijelio s {djeljitelj}");
+            //  Donje naredbu umetnuti u try-blok te dodati catch blok za hvatanje iznimke u slučaju dijeljenja s 0 i finally blok. 
+            //  Dodati kontrolne ispise gornjih poruka u svaki od tih blokova.
+            //  Pokrenuti program i provjeriti što će se ispisati.
+            try
+            {
+                Console.WriteLine(ZapočinjeBlokTry);
+                Console.WriteLine($"{djeljenjik} dijelim s {djeljitelj}");
+                Console.WriteLine(djeljenjik / djeljitelj);
+                Console.WriteLine($"{djeljenjik} sam podijelio s {djeljitelj}");
+                Console.WriteLine(ZavršavaBlokTry);
+            }
+            catch (DivideByZeroException e)
+            {
+                Console.WriteLine(BlokCatch);
+                //Console.WriteLine(e);
+            }
+            finally
+            {
+                Console.WriteLine(BlokFinally);
+            }
+            
 
         }
 
-        // TODO:033 Pokrenuti i provjeriti rezultate testova (2 testa iz grupe "TijekIzvođenja" moraju proći).
+        //  Pokrenuti i provjeriti rezultate testova (2 testa iz grupe "TijekIzvođenja" moraju proći).
 
         static void Main(string[] args)
         {
