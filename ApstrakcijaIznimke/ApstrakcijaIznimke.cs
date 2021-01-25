@@ -23,6 +23,7 @@ namespace Vsite.CSharp.Iznimke
                 Console.WriteLine(e);
             }
 
+
             // Pokrenuti i provjeriti testove (test u grupi "ApstrakcijeIznimke" mora proći)
 
             Console.WriteLine("GOTOVO!!!");
