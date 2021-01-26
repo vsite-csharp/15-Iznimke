@@ -19,8 +19,8 @@ namespace Vsite.CSharp.Iznimke
                 throw new Exception();
         }
 
-        // TODO:091 Usporediti pozive metoda u donje tri petlje
-        // TODO:092 Pokrenuti program i usporediti vremena izvođenja triju petlji
+        //  Usporediti pozive metoda u donje tri petlje
+        //  Pokrenuti program i usporediti vremena izvođenja triju petlji
         static void Main(string[] args)
         {
             Stopwatch sw = new Stopwatch();
