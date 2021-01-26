@@ -12,7 +12,7 @@ namespace Vsite.CSharp.Iznimke
     {
         public static void Main()
         {
-            // TODO:070 Odkomentirati donju naredbu te događaju UnhandledException pridružiti rukovatelja koji će ispisati podatke o neuhvaćenoj iznimci te pozvati Console.ReadKey() da privremeno zaustavi izvođenje. Pokrenuti program i provjeriti ponašanje.
+            // Odkomentirati donju naredbu te događaju UnhandledException pridružiti rukovatelja koji će ispisati podatke o neuhvaćenoj iznimci te pozvati Console.ReadKey() da privremeno zaustavi izvođenje. Pokrenuti program i provjeriti ponašanje.
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 
             try
