@@ -9,9 +9,9 @@ namespace Vsite.CSharp.Iznimke
     {
         static void Main(string[] args)
         {
-            // TODO:010 Provjeriti koju iznimku će baciti metoda Faktorjel u donjem kodu.
-            // TODO:011 Promijeniti implementaciju metode Faktorjel tako da za slučaj preljeva baca iznimku tipa ArgumentOutOfRangeException s imenom parametra i vrijednošću argumenta.
-            // TODO:012 Pokrenuti program i provjeriti tijek izvođenja
+            // :010 Provjeriti koju iznimku će baciti metoda Faktorjel u donjem kodu.
+            // :011 Promijeniti implementaciju metode Faktorjel tako da za slučaj preljeva baca iznimku tipa ArgumentOutOfRangeException s imenom parametra i vrijednošću argumenta.
+            // :012 Pokrenuti program i provjeriti tijek izvođenja
 
             try
             {
