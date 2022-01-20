@@ -10,10 +10,18 @@ namespace Vsite.CSharp.Iznimke
             // :004 Pokrenuti program i provjeriti što će se dogoditi.
             if (broj < 0)
                 throw new ArgumentOutOfRangeException(nameof(broj), broj, "Argument ne smije biti negativan broj!");
-            int rezultat = 1;
-            for (int i = 2; i <= broj; ++i)
-                rezultat *= i;
-            return rezultat;
+            try
+            {
+                int rezultat = 1;
+                for (int i = 2; i <= broj; ++i)
+                    rezultat *= i;
+                return rezultat;
+            }
+            catch (OverflowException )
+            {
+                throw new ArgumentOutOfRangeException(nameof(broj), broj, "Argument je preveliki broj");
+
+            }
         }
         // ova funkcija se koristi kasnije
         public static int Povrh(int n, int k)
@@ -41,11 +49,11 @@ namespace Vsite.CSharp.Iznimke
             // :007 Provjeriti vraćaju li nakon promjena donji pozivi metode očekivane rezultate.
             try
             {
-            IspišiFaktorjel(0); // trebalo bi ispisati: 0! = 1
-            IspišiFaktorjel(3); // trebalo bi ispisati: 3! = 6
-            IspišiFaktorjel(5); // trebalo bi ispisati: 5! = 120
-            IspišiFaktorjel(-1); // trebalo bi baciti iznimku!
-           
+                IspišiFaktorjel(0); // trebalo bi ispisati: 0! = 1
+                IspišiFaktorjel(3); // trebalo bi ispisati: 3! = 6
+                IspišiFaktorjel(5); // trebalo bi ispisati: 5! = 120
+                IspišiFaktorjel(-1); // trebalo bi baciti iznimku!
+
 
             }
             catch (ArgumentOutOfRangeException e)
@@ -56,7 +64,7 @@ namespace Vsite.CSharp.Iznimke
                 Console.WriteLine(e.Source);
                 Console.WriteLine(e.TargetSite);
                 Console.WriteLine(e.StackTrace);
-                
+
             }
             try
             {
@@ -72,7 +80,7 @@ namespace Vsite.CSharp.Iznimke
 
             }
 
-            // TODO:008 Pokrenuti testove (svi testovi u grupi "BacanjeIznimke" moraju proći)
+            // :008 Pokrenuti testove (svi testovi u grupi "BacanjeIznimke" moraju proći)
 
             Console.WriteLine("GOTOVO!!!");
             Console.ReadKey(false);
