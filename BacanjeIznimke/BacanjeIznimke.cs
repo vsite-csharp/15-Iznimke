@@ -11,10 +11,17 @@ namespace Vsite.CSharp.Iznimke
                 throw new ArgumentOutOfRangeException(nameof(broj), broj, "Argument ne smije biti negativni broj");
 
             // Pokrenuti program i provjeriti što će se dogoditi.
-            int rezultat = 1;
-            for (int i = 2; i <= broj; ++i)
-                rezultat *= i;
-            return rezultat;
+            try
+            {
+                int rezultat = 1;
+                for (int i = 2; i <= broj; ++i)
+                    rezultat *= i;
+                return rezultat;
+            }
+            catch (OverflowException e)
+            {
+                throw new ArgumentOutOfRangeException(nameof(broj), broj, e.Message);
+            }
         }
         // ova funkcija se koristi kasnije
         public static int Povrh(int n, int k)
