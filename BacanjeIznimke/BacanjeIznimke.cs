@@ -12,10 +12,20 @@ namespace Vsite.CSharp.Iznimke
             {
                 throw new ArgumentOutOfRangeException("Argument ne smije biti negativni broj");
             }
-            int rezultat = 1;
-            for (int i = 2; i <= broj; ++i)
-                rezultat *= i;
-            return rezultat;
+
+            try
+            {
+                int rezultat = 1;
+                for (int i = 2; i <= broj; ++i)
+                    rezultat *= i;
+                return rezultat;
+            }
+            catch (OverflowException)
+            {
+                var e = new ArgumentOutOfRangeException();
+                Console.WriteLine($"Parametar '{e.ParamName}' ima nedozvoljenu vrijednost {e.ActualValue}");
+                throw e;
+            }
         }
         // ova funkcija se koristi kasnije
         public static int Povrh(int n, int k)
@@ -57,7 +67,7 @@ namespace Vsite.CSharp.Iznimke
                 Console.WriteLine(e.Source);
                 Console.WriteLine(e.TargetSite);
                 Console.WriteLine(e.StackTrace);
-                
+
                 //throw e;
             }
 
