@@ -15,7 +15,7 @@ namespace Vsite.CSharp.Iznimke
             {
                 throw iznimka;
             }
-            // TODO: Složiti niz blokova catch tipa Exception, ArgumentOutOfRangeException i ArgumentException, dodati ispise koristeći gornje formate te provjeriti koja će iznimka biti uhvaćena u kojem bloku.
+            // : Složiti niz blokova catch tipa Exception, ArgumentOutOfRangeException i ArgumentException, dodati ispise koristeći gornje formate te provjeriti koja će iznimka biti uhvaćena u kojem bloku.
             // https://docs.microsoft.com/en-us/dotnet/api/system.argumentoutofrangeexception
             catch (ArgumentOutOfRangeException e)
             {
