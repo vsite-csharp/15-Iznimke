@@ -25,8 +25,8 @@ namespace Vsite.CSharp.Iznimke
             }
         }
 
-        // TODO:022 Pokrenuti program i provjeriti ispis.
-        // TODO:023 Pokrenuti i provjeriti testove (test u grupi "OdvajanjaGlavneLogike" mora proći)
+        // 022 Pokrenuti program i provjeriti ispis.
+        // 023 Pokrenuti i provjeriti testove (test u grupi "OdvajanjaGlavneLogike" mora proći)
 
         static void Main(string[] args)
         {
