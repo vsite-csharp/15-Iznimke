@@ -39,7 +39,7 @@ namespace Vsite.CSharp.Iznimke
         
 
         // 042 Pokrenuti program i provjeriti ispise.
-        // TODO:043 Pokrenuti i provjeriti testove (4 testa u grupi "VišestrukiBlokoviCatch" moraju proći).
+        // 043 Pokrenuti i provjeriti testove (4 testa u grupi "VišestrukiBlokoviCatch" moraju proći).
 
         static void Main(string[] args)
         {
