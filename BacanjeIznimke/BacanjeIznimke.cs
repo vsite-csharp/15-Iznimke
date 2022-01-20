@@ -6,16 +6,23 @@ namespace Vsite.CSharp.Iznimke
     {
         public static int Faktorjel(int broj)
         {
-            // TODO:003 Dodati u metodu provjeru je li argument manji od 0 i u tom slučaju baciti iznimku tipa ArgumentOutOfRangeException s porukom: "Argument ne smije biti negativni broj"
-            // TODO:004 Pokrenuti program i provjeriti što će se dogoditi.
+            // 003 Dodati u metodu provjeru je li argument manji od 0 i u tom slučaju baciti iznimku tipa ArgumentOutOfRangeException s porukom: "Argument ne smije biti negativni broj"
+            // 004 Pokrenuti program i provjeriti što će se dogoditi.
 
             if (broj < 0)
                 throw new ArgumentOutOfRangeException(nameof(broj), broj, "Argument ne smije biti negativan broj.");
-            
-            int rezultat = 1;
-            for (int i = 2; i <= broj; ++i)
-                rezultat *= i;
-            return rezultat;
+            try
+            {
+                int rezultat = 1;
+                for (int i = 2; i <= broj; ++i)
+                    rezultat *= i;
+                return rezultat;
+            }
+            catch (OverflowException)
+            {
+                throw new ArgumentOutOfRangeException(nameof(broj), broj, "Argument je preveliki broj.");
+            }
+
         }
         // ova funkcija se koristi kasnije
         public static int Povrh(int n, int k)
@@ -38,9 +45,9 @@ namespace Vsite.CSharp.Iznimke
             // Provjeriti opciju i za Debug i za Release!
             // 002 Pokrenuti program i provjeriti ispravnost ispisanih rezultata prije bacanja iznimke.
 
-            // TODO:005 Donje pozive funkcije Faktorjel staviti u blok try i iza njega hvatati iznimke tipa ArgumentOutOfRangeException.
-            // TODO:006 U bloku catch ispisati neka interesantna svojstva klase ArgumentOutOfRangeException.
-            // TODO:007 Provjeriti vraćaju li nakon promjena donji pozivi metode očekivane rezultate.
+            // 005 Donje pozive funkcije Faktorjel staviti u blok try i iza njega hvatati iznimke tipa ArgumentOutOfRangeException.
+            // 006 U bloku catch ispisati neka interesantna svojstva klase ArgumentOutOfRangeException.
+            // 007 Provjeriti vraćaju li nakon promjena donji pozivi metode očekivane rezultate.
             try
             {
                 IspišiFaktorjel(0); // trebalo bi ispisati: 0! = 1
@@ -77,7 +84,7 @@ namespace Vsite.CSharp.Iznimke
 
                 //throw e;
             }
-            // TODO:008 Pokrenuti testove (svi testovi u grupi "BacanjeIznimke" moraju proći)
+            // 008 Pokrenuti testove (svi testovi u grupi "BacanjeIznimke" moraju proći)
 
             Console.WriteLine("GOTOVO!!!");
             Console.ReadKey(false);
