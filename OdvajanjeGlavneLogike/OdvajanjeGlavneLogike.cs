@@ -19,7 +19,7 @@ namespace Vsite.CSharp.Iznimke
                     }
                 }
             }
-            catch (ArrayTypeMismatchException e)
+            catch (ArgumentOutOfRangeException e)
             {
                 Console.WriteLine(e.Message);
             }
