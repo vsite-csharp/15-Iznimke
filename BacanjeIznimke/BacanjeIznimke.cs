@@ -12,10 +12,20 @@ namespace Vsite.CSharp.Iznimke
             {
                 throw new ArgumentOutOfRangeException(nameof(broj), broj, "Argument ne smije biti negativni broj");
             }
-            int rezultat = 1;
-            for (int i = 2; i <= broj; ++i)
-                rezultat *= i;
-            return rezultat;
+            try
+            {
+                int rezultat = 1;
+                for (int i = 2; i <= broj; ++i)
+                    rezultat *= i;
+                return rezultat;
+
+            }
+            catch (OverflowException)
+            {
+
+                throw new ArgumentOutOfRangeException(nameof(broj), broj, "Argument je preveliki broj");
+            }
+
         }
         // ova funkcija se koristi kasnije
         public static int Povrh(int n, int k)
@@ -56,7 +66,7 @@ namespace Vsite.CSharp.Iznimke
                 Console.WriteLine(e.Source);
                 Console.WriteLine(e.StackTrace);
             }
-                  try
+            try
             {
                 IspišiFaktorjel(17); // trebalo bi baciti iznimku zbog preljeva!
             }
@@ -68,7 +78,7 @@ namespace Vsite.CSharp.Iznimke
                 Console.WriteLine(e.TargetSite);
             }
 
-            // TODO:008 Pokrenuti testove (svi testovi u grupi "BacanjeIznimke" moraju proći)
+            // :008 Pokrenuti testove (svi testovi u grupi "BacanjeIznimke" moraju proći)
 
             Console.WriteLine("GOTOVO!!!");
             Console.ReadKey(false);
