@@ -22,7 +22,7 @@ namespace Vsite.CSharp.Iznimke
                 Console.WriteLine($"Parametar '{e.ParamName}' ima nedozvoljenu vrijednost {e.ActualValue}");
             }
 
-            // TODO:013 Pokrenuti i provjeriti testove (test u grupi "ApstrakcijeIznimke" mora proći)
+            // :013 Pokrenuti i provjeriti testove (test u grupi "ApstrakcijeIznimke" mora proći)
 
             Console.WriteLine("GOTOVO!!!");
             Console.ReadKey(false);
