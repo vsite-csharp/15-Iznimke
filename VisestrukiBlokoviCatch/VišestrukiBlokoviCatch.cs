@@ -27,7 +27,7 @@ namespace Vsite.CSharp.Iznimke
                 Console.WriteLine(FormatFiltraArgumentOutOfRangeException, e.GetType().Name);
             }  
             
-            catch (ArithmeticException e)
+            catch (ArgumentException e)
             {
                 Console.WriteLine(FormatFiltraArgumentException, e.GetType().Name);
             }
