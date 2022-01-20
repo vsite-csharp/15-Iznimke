@@ -23,14 +23,14 @@ namespace Vsite.CSharp.Iznimke
             
             catch (ArgumentOutOfRangeException e)
             {
-                Console.WriteLine(FormatFiltraException, e.GetType().Name);
+                Console.WriteLine(FormatFiltraArgumentOutOfRangeException, e.GetType().Name);
             }catch (ArgumentException e)
             {
                 Console.WriteLine(FormatFiltraArgumentException, e.GetType().Name);
             }
             catch (Exception e)
             {
-                Console.WriteLine(FormatFiltraArgumentOutOfRangeException, e.GetType().Name);
+                Console.WriteLine(FormatFiltraException, e.GetType().Name);
             }
             Console.WriteLine();
         }
