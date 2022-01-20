@@ -16,13 +16,28 @@ namespace Vsite.CSharp.Iznimke
             // TODO:031 Dodati kontrolne ispise gornjih poruka u svaki od tih blokova.
             // TODO:032 Pokrenuti program i provjeriti što će se ispisati.
 
-            Console.WriteLine($"{djeljenik} dijelim s {djeljitelj}");
-            Console.WriteLine(djeljenik / djeljitelj);
-            Console.WriteLine($"{djeljenik} sam podijelio s {djeljitelj}");
+            try
+            {
+                Console.WriteLine("Blok try - početak");
+                Console.WriteLine($"{djeljenik} dijelim s {djeljitelj}");
+                Console.WriteLine(djeljenik / djeljitelj);
+                Console.WriteLine($"{djeljenik} sam podijelio s {djeljitelj}");
+                Console.WriteLine("Blok try - kraj");
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Blok catch");
 
+                //throw;
+            }
+            finally
+            {
+                Console.WriteLine("Blok finally");
+
+            }
         }
 
-        // TODO:033 Pokrenuti i provjeriti rezultate testova (2 testa iz grupe "TijekIzvođenja" moraju proći).
+        // 033 Pokrenuti i provjeriti rezultate testova (2 testa iz grupe "TijekIzvođenja" moraju proći).
 
         static void Main(string[] args)
         {
