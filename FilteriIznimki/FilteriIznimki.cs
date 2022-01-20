@@ -24,20 +24,28 @@ namespace Vsite.CSharp.Iznimke
 
         public const string FormatIspisa = "Logaritam broja {0} po bazi {1} = {2}";
 
+        public const string FormatPogreške = "Nedozvoljena vrijednost parametara {0}: {1}";
+
         public static void IspišiLogaritamBroja(double broj, double baza)
         {
-            // TODO:050 Proširiti blok hvatanja filtrom koji će hvatati iznimku samo za broj <= 0 (ali ne i bazu) i u tom slučaju ispisati gornju poruku NedozvoljeniBroj.
+            // :050 Proširiti blok hvatanja filtrom koji će hvatati iznimku samo za broj <= 0 (ali ne i bazu) i u tom slučaju ispisati gornju poruku NedozvoljeniBroj.
             try
             {
                 Console.WriteLine(FormatIspisa, broj, baza, Math.Logaritam(broj, baza));
             }
+            catch (ArgumentOutOfRangeException e) when (broj < 0)
+            {
+                Console.WriteLine(NedozvoljeniBroj);
+            }            
             catch (ArgumentOutOfRangeException e)
             {
+                Console.WriteLine(FormatIspisa, e.ParamName, e.ActualValue);
+
             }
         }
 
-        // TODO:051 Pokrenuti program i provjeriti ispis.
-        // TODO:052 Pokrenuti i provjeriti testove (3 testa iz grupe "FiltriranjeIznimkiPredikatom" moraju proći)
+        // :051 Pokrenuti program i provjeriti ispis.
+        // :052 Pokrenuti i provjeriti testove (3 testa iz grupe "FiltriranjeIznimkiPredikatom" moraju proći)
 
         static void Main(string[] args)
         {
