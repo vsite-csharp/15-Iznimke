@@ -6,8 +6,9 @@ namespace Vsite.CSharp.Iznimke
     {
         public static void IspisPovrh(int prvi, int zadnji)
         {
-            // TODO:020 Pokrenuti program i provjeriti što će se dogoditi.
-            // TODO:021 Donje petlje obuhvatiti try-catch blokom koji će prekinuti daljnje računanje kada bude bačena iznimka. Unutar bloka hvatanja ispisati poruku o pogrešci.
+            // 020 Pokrenuti program i provjeriti što će se dogoditi.
+            // 021 Donje petlje obuhvatiti try-catch blokom koji će prekinuti daljnje računanje kada bude bačena iznimka. Unutar bloka hvatanja ispisati poruku o pogrešci.
+            try
             {
                 for (int n = prvi; n < zadnji; ++n)
                 {
@@ -17,6 +18,10 @@ namespace Vsite.CSharp.Iznimke
                         Console.WriteLine($"{n} povrh {k} = {Math.Povrh(n, k)}");
                     }
                 }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
         }
 
