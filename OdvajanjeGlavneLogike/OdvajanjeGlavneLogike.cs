@@ -2,6 +2,7 @@
 
 namespace Vsite.CSharp.Iznimke
 {
+
     class OdvajanjeGlavneLogike
     {
         public static void IspisPovrh(int prvi, int zadnji)

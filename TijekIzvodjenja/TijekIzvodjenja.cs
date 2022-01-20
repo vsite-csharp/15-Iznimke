@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 namespace Vsite.CSharp.Iznimke
 {
     // ispis tijeka izvođenja try-catch-finally bloka

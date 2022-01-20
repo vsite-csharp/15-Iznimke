@@ -1,6 +1,7 @@
 ﻿using System;
 
 namespace Vsite.CSharp.Iznimke
+
 {
     public static class Math
     {
