@@ -45,13 +45,24 @@ namespace Vsite.CSharp.Iznimke
                 IspišiFaktorjel(3); // trebalo bi ispisati: 3! = 6
                 IspišiFaktorjel(5); // trebalo bi ispisati: 5! = 120
                 IspišiFaktorjel(-1); // trebalo bi baciti iznimku!
-                IspišiFaktorjel(17); // trebalo bi baciti iznimku zbog preljeva!
             }
             catch (ArgumentOutOfRangeException e)
             {
                 Console.WriteLine(e.Message);
                 Console.WriteLine(e.ParamName);
                 Console.WriteLine(e.ActualValue);
+                Console.WriteLine(e.Source);
+                Console.WriteLine(e.TargetSite);
+                Console.WriteLine(e.StackTrace);
+                
+            }
+            try
+            {
+                IspišiFaktorjel(17); // trebalo bi baciti iznimku zbog preljeva!
+            }
+            catch (OverflowException e)
+            {
+                Console.WriteLine(e.Message);
                 Console.WriteLine(e.Source);
                 Console.WriteLine(e.TargetSite);
                 Console.WriteLine(e.StackTrace);
