@@ -20,15 +20,22 @@ namespace Vsite.CSharp.Iznimke
             // https://docs.microsoft.com/en-us/dotnet/api/system.exception
             // https://docs.microsoft.com/en-us/dotnet/api/system.argumentoutofrangeexception
             // https://docs.microsoft.com/en-us/dotnet/api/system.argumentexception
-            catch (Exception e)
+            catch (ArgumentOutOfRangeException  e)
+            {
+                Console.WriteLine(FormatFiltraArgumentOutOfRangeException, e.GetType().Name);
+            }  catch (ArgumentException  e)
+            {
+                Console.WriteLine(FormatFiltraArgumentException, e.GetType().Name);
+            }
+            catch(Exception e)
             {
                 Console.WriteLine(FormatFiltraException, e.GetType().Name);
             }
             Console.WriteLine();
         }
 
-        // TODO:042 Pokrenuti program i provjeriti ispise.
-        // TODO:043 Pokrenuti i provjeriti testove (4 testa u grupi "VišestrukiBlokoviCatch" moraju proći).
+        // :042 Pokrenuti program i provjeriti ispise.
+        // :043 Pokrenuti i provjeriti testove (4 testa u grupi "VišestrukiBlokoviCatch" moraju proći).
 
         static void Main(string[] args)
         {
