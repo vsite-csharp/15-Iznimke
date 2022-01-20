@@ -10,12 +10,22 @@ namespace Vsite.CSharp.Iznimke
             {
                 throw new ArgumentOutOfRangeException("Argument ne smije biti negativni broj");
             }
+
             // 003 Dodati u metodu provjeru je li argument manji od 0 i u tom slučaju baciti iznimku tipa ArgumentOutOfRangeException s porukom: "Argument ne smije biti negativni broj"
             // 004 Pokrenuti program i provjeriti što će se dogoditi.
-            int rezultat = 1;
-            for (int i = 2; i <= broj; ++i)
-                rezultat *= i;
-            return rezultat;
+            try
+            {
+                int rezultat = 1;
+                for (int i = 2; i <= broj; ++i)
+                    rezultat *= i;
+                return rezultat;
+            }
+            catch (OverflowException)
+            {
+                throw new ArgumentOutOfRangeException(nameof(broj), broj, "Argument je preveliki broj");
+            }
+
+
         }
         // ova funkcija se koristi kasnije
         public static int Povrh(int n, int k)
@@ -44,15 +54,32 @@ namespace Vsite.CSharp.Iznimke
             try
             {
 
-            IspišiFaktorjel(0); // trebalo bi ispisati: 0! = 1
-            IspišiFaktorjel(3); // trebalo bi ispisati: 3! = 6
-            IspišiFaktorjel(5); // trebalo bi ispisati: 5! = 120
-            IspišiFaktorjel(-1); // trebalo bi baciti iznimku!
-            IspišiFaktorjel(17); // trebalo bi baciti iznimku zbog preljeva!
+                IspišiFaktorjel(0); // trebalo bi ispisati: 0! = 1
+                IspišiFaktorjel(3); // trebalo bi ispisati: 3! = 6
+                IspišiFaktorjel(5); // trebalo bi ispisati: 5! = 120
+                IspišiFaktorjel(-1); // trebalo bi baciti iznimku!
+                IspišiFaktorjel(17); // trebalo bi baciti iznimku zbog preljeva!
             }
-            catch (Exception ArgumentOutOfRangeException)
+            catch (ArgumentOutOfRangeException e)
             {
-                Console.WriteLine(ArgumentOutOfRangeException.Message.ToString());
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.ParamName);
+                Console.WriteLine(e.ActualValue);
+                Console.WriteLine(e.Source);
+                Console.WriteLine(e.TargetSite);
+                Console.WriteLine(e.StackTrace);
+            }
+            try
+            {
+                IspišiFaktorjel(17);
+            }
+            catch (OverflowException e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.Source);
+                Console.WriteLine(e.TargetSite);
+                Console.WriteLine(e.StackTrace);
+                throw;
             }
 
             // 008 Pokrenuti testove (svi testovi u grupi "BacanjeIznimke" moraju proći)
