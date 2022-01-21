@@ -56,6 +56,7 @@
     <Compile Include="FiltarIznimki.cs" />
     <Compile Include="OdvajanjaGlavneLogike.cs" />
     <Compile Include="TijekIzvođenja.cs" />
+    <Compile Include="BacanjeIznimkeUPozvanojMetodi.cs" />
     <Compile Include="VišestrukiBlokoviCatch.cs" />
   </ItemGroup>
   <ItemGroup>
