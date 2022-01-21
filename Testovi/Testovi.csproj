@@ -51,11 +51,14 @@
   <ItemGroup>
     <Compile Include="ConsoleTest.cs" />
     <Compile Include="BacanjeIznimke.cs" />
+    <Compile Include="ExceptionTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ApstrakcijaIznimke.cs" />
     <Compile Include="FiltarIznimki.cs" />
     <Compile Include="OdvajanjaGlavneLogike.cs" />
     <Compile Include="TijekIzvođenja.cs" />
+    <Compile Include="BacanjeIznimkeUPozvanojMetodi.cs" />
+    <Compile Include="RukovateljNeobrađenihIznimki.cs" />
     <Compile Include="VišestrukiBlokoviCatch.cs" />
   </ItemGroup>
   <ItemGroup>

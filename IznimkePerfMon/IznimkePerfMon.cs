@@ -8,9 +8,13 @@ namespace Vsite.CSharp.Iznimke
 {
     // Program generira iznimke u određenim vremenskim intervalima da bismo
     // ih mogli pratiti u PERFMON aplikaciji
-    // TODO:100 Pokrenuti program izvan Visual Studija
-    // TODO:101 Pokrenuti program PerfMon i u njemu uključiti praćenje .NET CLR Exceptions
-    // TODO:102 Kliknuti na tipku u formi naše aplikacije da počne bacati iznimke te pratiti graf u programu PerfMon
+
+    // TODO:110 Pokrenuti program izvan Visual Studija
+    // TODO:111 Pokrenuti program PerfMon i u njemu uključiti praćenje .NET CLR Exceptions:
+    //          - kliknuti na crveni + i u popisu brojača potražiti .NET CLR Exceptions
+    //          - proširiti stavku .NET CLR Exceptions i u njoj odabrati "# of Exceps Thrown"
+    //          - u popisu objekata potražiti i selektirati "IznimkePerfMon" te pritisnuti tipku Add.
+    // TODO:112 Kliknuti na tipku u formi naše aplikacije da počne bacati iznimke te pratiti graf u programu PerfMon.
     static class IznimkePerfMon
     {
         /// <summary>
