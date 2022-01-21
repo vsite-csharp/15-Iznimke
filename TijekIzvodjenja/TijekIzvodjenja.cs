@@ -17,13 +17,15 @@ namespace Vsite.CSharp.Iznimke
             // Pokrenuti program i provjeriti što će se ispisati.
             try
             {
+                Console.WriteLine(ZapočinjeBlokTry);
+
                 Console.WriteLine($"{djeljenik} dijelim s {djeljitelj}");
                 Console.WriteLine(djeljenik / djeljitelj);
                 Console.WriteLine($"{djeljenik} sam podijelio s {djeljitelj}");
 
                 Console.WriteLine(ZavršavaBlokTry);
             }
-            catch (DivideByZeroException e)
+            catch (DivideByZeroException)
             {
                 Console.WriteLine(BlokCatch);
             }

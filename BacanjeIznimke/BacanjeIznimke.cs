@@ -10,7 +10,7 @@ namespace Vsite.CSharp.Iznimke
             // Pokrenuti program i provjeriti što će se dogoditi.
             if (broj < 0)
             {
-                throw new ArgumentOutOfRangeException("Argument ne smije biti negativni broj");
+                throw new ArgumentOutOfRangeException(nameof(broj), broj, "Argument ne smije biti negativni broj");
             }
 
             try
@@ -20,11 +20,9 @@ namespace Vsite.CSharp.Iznimke
                     rezultat *= i;
                 return rezultat;
             }
-            catch (OverflowException)
+            catch (OverflowException e)
             {
-                var e = new ArgumentOutOfRangeException();
-                Console.WriteLine($"Parametar '{e.ParamName}' ima nedozvoljenu vrijednost {e.ActualValue}");
-                throw e;
+                throw new ArgumentOutOfRangeException(nameof(broj), broj, e.Message);
             }
         }
         // ova funkcija se koristi kasnije
@@ -57,7 +55,6 @@ namespace Vsite.CSharp.Iznimke
                 IspišiFaktorjel(3); // trebalo bi ispisati: 3! = 6
                 IspišiFaktorjel(5); // trebalo bi ispisati: 5! = 120
                 IspišiFaktorjel(-1); // trebalo bi baciti iznimku!
-                IspišiFaktorjel(17); // trebalo bi baciti iznimku zbog preljeva!
             }
             catch (ArgumentOutOfRangeException e)
             {
@@ -67,12 +64,25 @@ namespace Vsite.CSharp.Iznimke
                 Console.WriteLine(e.Source);
                 Console.WriteLine(e.TargetSite);
                 Console.WriteLine(e.StackTrace);
-
-                //throw e;
             }
 
-
-            // okrenuti testove (svi testovi u grupi "BacanjeIznimke" moraju proći)
+            IspišiFaktorjel(0); // trebalo bi ispisati: 0! = 1
+            IspišiFaktorjel(3); // trebalo bi ispisati: 3! = 6
+            IspišiFaktorjel(5); // trebalo bi ispisati: 5! = 120
+            IspišiFaktorjel(-1); // trebalo bi baciti iznimku!
+            IspišiFaktorjel(17); // trebalo bi baciti iznimku zbog preljeva!
+            try
+            {
+                IspišiFaktorjel(17); // trebalo bi baciti iznimku zbog preljeva!
+            }
+            catch (OverflowException e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.Source);
+                Console.WriteLine(e.TargetSite);
+                Console.WriteLine(e.StackTrace);
+            }
+            // Pokrenuti testove (svi testovi u grupi "BacanjeIznimke" moraju proći)
 
             Console.WriteLine("GOTOVO!!!");
             Console.ReadKey(false);
