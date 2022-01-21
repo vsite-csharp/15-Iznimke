@@ -8,16 +8,17 @@ namespace Vsite.CSharp.Iznimke
     {
         static void Main(string[] args)
         {
-            // TODO:060 Prije izvođenja programa pokušati predvidjeti tok programa. Pokrenuti program i provjeriti ispravnost pretpostavke.
+            // 060 Prije izvođenja programa pokušati predvidjeti tok programa. Pokrenuti program i provjeriti ispravnost pretpostavke.
             try
             {
                 Metoda1();
             }
-            // TODO:061 Zakomentirati donji blok catch i provjeriti što će se dogoditi ponovnim pokretanjem programa.
-            catch (Exception e)
-            {
-                Console.WriteLine("catch(Exception) u Main");
-            }
+            // 061 Zakomentirati donji blok catch i provjeriti što će se dogoditi ponovnim pokretanjem programa.
+            //          -> ništa se nije promijenilo
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine("catch(Exception) u Main");
+            //}
             finally
             {
                 Console.WriteLine("finally u Main");
@@ -36,7 +37,8 @@ namespace Vsite.CSharp.Iznimke
             {
                 Console.WriteLine("catch(ArgumentException) u Metoda1");
             }
-            // TODO:062 Kako bi izgledalo izvođenje programa kada bi se izostavio donji blok hvatanja? Zakomenirajte ga i pokrenite program. 
+            // 062 Kako bi izgledalo izvođenje programa kada bi se izostavio donji blok hvatanja? Zakomenirajte ga i pokrenite program. 
+            //          -> Unhandled exception
             catch (DivideByZeroException)
             {
                 Console.WriteLine("catch(DivideByZeroException) u Metoda1");
