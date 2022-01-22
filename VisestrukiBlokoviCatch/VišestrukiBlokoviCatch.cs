@@ -20,6 +20,14 @@ namespace Vsite.CSharp.Iznimke
             // https://docs.microsoft.com/en-us/dotnet/api/system.exception
             // https://docs.microsoft.com/en-us/dotnet/api/system.argumentoutofrangeexception
             // https://docs.microsoft.com/en-us/dotnet/api/system.argumentexception
+            catch (ArgumentOutOfRangeException e)
+            {
+                Console.WriteLine(FormatFiltraArgumentOutOfRangeException, e.GetType().Name);
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine(FormatFiltraArgumentException, e.GetType().Name);
+            }
             catch (Exception e)
             {
                 Console.WriteLine(FormatFiltraException, e.GetType().Name);
