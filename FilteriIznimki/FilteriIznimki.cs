@@ -40,8 +40,8 @@ namespace Vsite.CSharp.Iznimke
             }
         }
 
-        // TODO:052 Pokrenuti program i provjeriti ispis.
-        // TODO:053 Pokrenuti i provjeriti testove (3 testa iz grupe "FiltriranjeIznimkiPredikatom" moraju proći)
+        // :052 Pokrenuti program i provjeriti ispis.
+        // :053 Pokrenuti i provjeriti testove (3 testa iz grupe "FiltriranjeIznimkiPredikatom" moraju proći)
 
         static void Main(string[] args)
         {
