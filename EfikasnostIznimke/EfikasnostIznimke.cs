@@ -6,6 +6,7 @@ using System.Diagnostics;
 namespace Vsite.CSharp.Iznimke
 {
     // Pogledati što rade donje dvije metode.
+
     class EfikasnostIznimke
     {
         public static bool DodajBezIznimke(ref int broj)
@@ -23,7 +24,7 @@ namespace Vsite.CSharp.Iznimke
         }
 
         private delegate bool Funkcija(ref int broj);
-
+      
         // Pogledati što radi metoda Petlja i kako se poziva u metodi Main.
         static Tuple<int, int> Petlja(Funkcija f, int n)
         {
@@ -45,6 +46,7 @@ namespace Vsite.CSharp.Iznimke
             }
             return new Tuple<int, int>(brojIznimki, brojRegularnih);
         }
+
 
         // Pokrenuti program i usporediti vremena izvođenja oba poziva metode Petlja.
         // Pokrenuti probram "Start without Debugging" (Ctrl + F5) i ponovno usporediti vremena.

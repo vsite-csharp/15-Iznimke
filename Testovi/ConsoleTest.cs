@@ -64,18 +64,22 @@ namespace Vsite.CSharp.Iznimke.Testovi
         }
 
         protected ConsoleTestWriter cw = null;
+        protected ConsoleTestWriter ew = null;
 
         [TestInitialize()]
         public virtual void Initialize()
         {
             cw = new ConsoleTestWriter();
             Console.SetOut(cw);
+            ew = new ConsoleTestWriter();
+            Console.SetError(ew);
         }
 
         [TestCleanup()]
         public virtual void Cleanup()
         {
             cw.Dispose();
+            ew.Dispose();
         }
     }
 }

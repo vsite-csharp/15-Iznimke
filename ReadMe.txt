@@ -22,12 +22,12 @@ TijekIzvođenja
 Ispis tijeka izvođenja try-catch-finally blokova
 
 
-FltarIznimki
-------------
-Primjer filtra iznimki prema tipu bačene iznimke.
+VišestrukiBlokoviCatch
+----------------------
+Primjer filtriranja iznimki prema tipu bačene iznimke.
 
 
-FiltriranjeIznimkiPredikatom
+FilteriIznimki
 ----------------------------
 Kako se mogu filtrirati iznimke istog tipa, prema dodatnom kriteriju.
 
@@ -39,9 +39,14 @@ Primjer izvođenja try-catch-finally kada je iznimka bačena unutar pozvane meto
 
 RukovateljNeobrađenihIznimki
 ----------------------------
-Primjer definiranja obrade UnhandledException događaja
-Ovo omogućava da zapišemo sve neuhvaćene iznimke (npr. u log datoteku), 
-no program će još uvijek imati unhandled exception!
+Primjer zadavanja metode koja će biti pozvana u slučaju da se dogodi neobrađena iznimka.
+To omogućava da se neuhvaćenu iznimka registrira (npr. zapišu željeni podaci u datoteku), 
+no program će i nakon toga prekinuti izvođenje s neobrađenom iznimkom!
+
+
+KritičneIznimke
+---------------
+Ilustracija kako je kritične iznimke u pravilu nemoguće obrađivati.
 
 
 IznimkeWinForms
@@ -58,12 +63,3 @@ IznimkePerfMon
 --------------
 Program generira iznimke u određenim vremenskim intervalima da bismo
 ih mogli pratiti u PERFMON aplikaciji
-TODO: 
-1. Izgraditi program IznimkePerfmon
-2. Pokrenuti program iz Windowsa (ne iz Visual Studija)
-3. U Windowsima potražiti program PerfMon (Performance Monitor) te ga pokrenuti
-4. U PerfMon-u kliknuti na crveni + i u popisu brojača potražiti .NET CLR Exceptions
-5. Proširiti stavku .NET CLR Exceptions i u njoj odabrati "# of Exceps Thrown"" 
-6. U popisu objekata potražiti i selektirati "IznimkePerfMon" te pritisnuti tipku Add
-7. U programu IznimkePerfmon pritisnuti tipku za bacanje iznimki te pratiti prikaz u PerfMonu
-

@@ -7,41 +7,38 @@ namespace Vsite.CSharp.Iznimke.Testovi
     [TestClass]
     public class FiltarIznimki : ConsoleTest
     {
-        bool ProvjeriFiltereIznimki()
-        {
-            MethodInfo mi = typeof(FilteriIznimki).GetMethod("IspišiLogaritamBroja");
-            MethodBody mb = mi.GetMethodBody();
-            if (mb.ExceptionHandlingClauses.Count != 2)
-                return false;
-            if (mb.ExceptionHandlingClauses[0].Flags != ExceptionHandlingClauseOptions.Filter)
-                return false;
-            if (mb.ExceptionHandlingClauses[1].Flags != ExceptionHandlingClauseOptions.Clause)
-                return false;
-            return true;
-        }
-
         [TestMethod]
         public void IspišiLogaritamZaIspravneArgumenteIspisujeRezultat()
         {
-            Assert.IsTrue(ProvjeriFiltereIznimki());
-
-            FilteriIznimki.IspišiLogaritamBroja(1000, 10);
+            FilteriIznimki.IspišiLogaritamBroja2(1000, 10);
             Assert.AreEqual(string.Format(FilteriIznimki.FormatIspisa, 1000, 10, 3), cw.GetString());
         }
 
         [TestMethod]
         public void IspišiLogaritamZaNegativniBrojIspisujePogrešku()
         {
-            FilteriIznimki.IspišiLogaritamBroja(-1000, 10);
+            FilteriIznimki.IspišiLogaritamBroja2(-1000, 10);
             Assert.AreEqual(FilteriIznimki.NedozvoljeniBroj, cw.GetString());
         }
 
         [TestMethod]
         public void IspišiLogaritamZaNegativnuBazuIspisujePogrešku()
         {
-            Assert.IsTrue(ProvjeriFiltereIznimki());
-            FilteriIznimki.IspišiLogaritamBroja(1000, -10);
+            FilteriIznimki.IspišiLogaritamBroja2(1000, -10);
             Assert.AreEqual(string.Format(FilteriIznimki.FormatPogreške, "baza", -10), cw.GetString());
+        }
+
+        [TestMethod]
+        public void IspišiLogaritamBroja1SadržiFiltarIznimke()
+        {
+            Assert.IsTrue(ExceptionTest.CheckExceptionHandling<FilteriIznimki>("IspišiLogaritamBroja1", new ExceptionHandlingInfo[] { new ExceptionHandlingInfo(ExceptionHandlingClauseOptions.Filter, typeof(ArgumentOutOfRangeException)) }));
+        }
+
+        [TestMethod]
+        public void IspišiLogaritamBroja2SadržiSamoBlokHvatanjaIspišiLogaritamBroja1SadržiFiltarIznimke()
+        {
+            Assert.IsTrue(ExceptionTest.CheckExceptionHandling<FilteriIznimki>("IspišiLogaritamBroja1", new ExceptionHandlingInfo[] { new ExceptionHandlingInfo(ExceptionHandlingClauseOptions.Filter, typeof(ArgumentOutOfRangeException)) }));
+            Assert.IsTrue(ExceptionTest.CheckExceptionHandling<FilteriIznimki>("IspišiLogaritamBroja2", new ExceptionHandlingInfo[] { new ExceptionHandlingInfo(ExceptionHandlingClauseOptions.Clause, typeof(ArgumentOutOfRangeException)) }));
         }
     }
 }
