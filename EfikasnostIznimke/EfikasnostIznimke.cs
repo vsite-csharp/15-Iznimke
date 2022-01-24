@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Diagnostics;
 
+
+
 namespace Vsite.CSharp.Iznimke
 {
-    // TODO:090 Pogledati što rade donje dvije metode.
+    // Pogledati što rade donje dvije metode.
     class EfikasnostIznimke
     {
         public static bool DodajBezIznimke(ref int broj)
@@ -22,8 +24,8 @@ namespace Vsite.CSharp.Iznimke
 
         private delegate bool Funkcija(ref int broj);
 
-        // TODO:091 Pogledati što radi metoda Petlja i kako se poziva u metodi Main.
-        static (int brojIznimnih, int brojRegularnih) Petlja(Funkcija f, int n)
+        // Pogledati što radi metoda Petlja i kako se poziva u metodi Main.
+        static Tuple<int, int> Petlja(Funkcija f, int n)
         {
             int zbroj = 0;
             int brojRegularnih = 0;
@@ -41,11 +43,11 @@ namespace Vsite.CSharp.Iznimke
                     ++brojIznimki;
                 }
             }
-            return (brojIznimki, brojRegularnih);
+            return new Tuple<int, int>(brojIznimki, brojRegularnih);
         }
 
-        // TODO:092 Pokrenuti program i usporediti vremena izvođenja oba poziva metode Petlja.
-        // TODO:093 Pokrenuti probram "Start without Debugging" (Ctrl + F5) i ponovno usporediti vremena.
+        // Pokrenuti program i usporediti vremena izvođenja oba poziva metode Petlja.
+        // Pokrenuti probram "Start without Debugging" (Ctrl + F5) i ponovno usporediti vremena.
         static void Main(string[] args)
         {
             const int brojPonavljanja = 100000;
@@ -63,7 +65,7 @@ namespace Vsite.CSharp.Iznimke
 
             Console.WriteLine("*** DodajBezIznimke ***");
             sw.Restart();
-            (brojIznimki, brojRegularnih) = Petlja(DodajBezIznimke, brojPonavljanja);
+            var tuple1 = Petlja(DodajBezIznimke, brojPonavljanja);
             sw.Stop();
 
             Console.WriteLine(sw.ElapsedTicks);
@@ -72,7 +74,7 @@ namespace Vsite.CSharp.Iznimke
 
             Console.WriteLine("*** DodajSIznimkom ***");
             sw.Restart();
-            (brojIznimki, brojRegularnih) = Petlja(DodajSIznimkom, brojPonavljanja);
+            var tuple2 = Petlja(DodajSIznimkom, brojPonavljanja);
             sw.Stop();
 
             Console.WriteLine(sw.ElapsedTicks);
