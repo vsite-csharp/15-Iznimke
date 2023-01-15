@@ -1,7 +1,4 @@
-﻿using System;
-using System.IO;
-
-namespace Vsite.CSharp.Iznimke
+﻿namespace Vsite.CSharp.Iznimke
 {
     class VišestrukiBlokoviCatch
     {
@@ -46,8 +43,7 @@ namespace Vsite.CSharp.Iznimke
                 HvatanjeIznimkePremaTipu(iznimke[i]);
             }
 
-            Console.WriteLine("GOTOVO!!!");
-            Console.ReadKey(false);
+            Console.WriteLine("/nGOTOVO!!!");
         }
     }
 }

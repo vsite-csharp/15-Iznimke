@@ -1,7 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace Vsite.CSharp.Iznimke.Testovi
+﻿namespace Vsite.CSharp.Iznimke.Testovi
 {
     [TestClass]
     public class ApstrakcijaIznimke

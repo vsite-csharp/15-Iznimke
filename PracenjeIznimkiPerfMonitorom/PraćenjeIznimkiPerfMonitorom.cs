@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace Vsite.CSharp.Iznimke
+﻿namespace Vsite.CSharp.Iznimke
 {
     // Program generira iznimke u određenim vremenskim intervalima da bismo
     // ih mogli pratiti u PERFMON aplikaciji
@@ -15,7 +9,7 @@ namespace Vsite.CSharp.Iznimke
     //          - proširiti stavku .NET CLR Exceptions i u njoj odabrati "# of Exceps Thrown"
     //          - u popisu objekata potražiti i selektirati "IznimkePerfMon" te pritisnuti tipku Add.
     // TODO:112 Kliknuti na tipku u formi naše aplikacije da počne bacati iznimke te pratiti graf u programu PerfMon.
-    static class IznimkePerfMon
+    static class PraćenjeIznimkiPerfMonitorom
     {
         /// <summary>
         /// The main entry point for the application.
@@ -25,7 +19,7 @@ namespace Vsite.CSharp.Iznimke
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new PeriodičniBacačIznimki());
         }
     }
 }

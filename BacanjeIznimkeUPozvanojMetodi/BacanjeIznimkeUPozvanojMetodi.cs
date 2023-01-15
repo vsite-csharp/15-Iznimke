@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Vsite.CSharp.Iznimke
+﻿namespace Vsite.CSharp.Iznimke
 {
     // Primjer izvođenja try-catch-finally kada je iznimka
     // bačena unutar pozvane metode
@@ -13,8 +11,7 @@ namespace Vsite.CSharp.Iznimke
             Console.WriteLine();
             Metoda1(5, 0);
 
-            Console.WriteLine("GOTOVO!!!");
-            Console.ReadKey();
+            Console.WriteLine("/nGOTOVO!!!");
         }
 
         public static void Metoda1(int djeljenik, int djeljitelj)

@@ -1,6 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Reflection;
+﻿using System.Reflection;
 
 namespace Vsite.CSharp.Iznimke.Testovi
 {
@@ -29,11 +27,11 @@ namespace Vsite.CSharp.Iznimke.Testovi
         public void PozivMetode1ZaDjeljiteljRazličitOd0IspisujeRezultat()
         {
             Vsite.CSharp.Iznimke.BacanjeIznimkeUPozvanojMetodi.Metoda1(5, 2);
-            Assert.AreEqual(4, cw.Count);
-            Assert.AreEqual("5 / 2 = 2", cw.GetString());
-            Assert.AreEqual("finally u Metoda3", cw.GetString());
-            Assert.AreEqual("finally u Metoda2", cw.GetString());
-            Assert.AreEqual("finally u Metoda1", cw.GetString());
+            Assert.AreEqual(4, cw?.Count);
+            Assert.AreEqual("5 / 2 = 2", cw?.GetString());
+            Assert.AreEqual("finally u Metoda3", cw?.GetString());
+            Assert.AreEqual("finally u Metoda2", cw?.GetString());
+            Assert.AreEqual("finally u Metoda1", cw?.GetString());
         }
 
         [TestMethod]
@@ -48,11 +46,11 @@ namespace Vsite.CSharp.Iznimke.Testovi
             }
             catch (DivideByZeroException e)
             {
-                Assert.AreEqual("Metoda3", e.TargetSite.Name);
-                Assert.AreEqual(3, cw.Count);
-                Assert.AreEqual("finally u Metoda3", cw.GetString());
-                Assert.AreEqual("finally u Metoda2", cw.GetString());
-                Assert.AreEqual("finally u Metoda1", cw.GetString());
+                Assert.AreEqual("Metoda3", e?.TargetSite?.Name);
+                Assert.AreEqual(3, cw?.Count);
+                Assert.AreEqual("finally u Metoda3", cw?.GetString());
+                Assert.AreEqual("finally u Metoda2", cw?.GetString());
+                Assert.AreEqual("finally u Metoda1", cw?.GetString());
             }
         }
     }

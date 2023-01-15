@@ -1,6 +1,6 @@
 ﻿namespace Vsite.CSharp.Iznimke
 {
-    partial class Form1
+    partial class BacačIznimki
     {
         /// <summary>
         /// Required designer variable.
@@ -33,22 +33,24 @@
             // 
             // buttonException
             // 
-            this.buttonException.Location = new System.Drawing.Point(104, 127);
+            this.buttonException.Location = new System.Drawing.Point(121, 147);
+            this.buttonException.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonException.Name = "buttonException";
-            this.buttonException.Size = new System.Drawing.Size(75, 23);
+            this.buttonException.Size = new System.Drawing.Size(88, 27);
             this.buttonException.TabIndex = 0;
             this.buttonException.Text = "&Baci iznimku";
             this.buttonException.UseVisualStyleBackColor = true;
             this.buttonException.Click += new System.EventHandler(this.buttonException_Click);
             // 
-            // Form1
+            // BacačIznimki
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(270, 291);
+            this.ClientSize = new System.Drawing.Size(315, 336);
             this.Controls.Add(this.buttonException);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Name = "BacačIznimki";
+            this.Text = "Bacač iznimki";
             this.ResumeLayout(false);
 
         }

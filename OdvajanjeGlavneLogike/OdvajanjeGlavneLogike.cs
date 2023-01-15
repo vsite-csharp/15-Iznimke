@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Vsite.CSharp.Iznimke
+﻿namespace Vsite.CSharp.Iznimke
 {
     class OdvajanjeGlavneLogike
     {
@@ -27,8 +25,7 @@ namespace Vsite.CSharp.Iznimke
         {
             IspisPovrh(1, 20);
 
-            Console.WriteLine("GOTOVO!!!");
-            Console.ReadKey(true);
+            Console.WriteLine("/nGOTOVO!!!");
         }
     }
 }

@@ -1,9 +1,7 @@
-﻿using System;
-
-namespace Vsite.CSharp.Iznimke
+﻿namespace Vsite.CSharp.Iznimke
 {
     // ispis tijeka izvođenja try-catch-finally bloka
-    class TijekIzvodjenja
+    class TijekIzvođenja
     {
         public const string ZapočinjeBlokTry = "Blok try - početak";
         public const string ZavršavaBlokTry = "Blok try - kraj";
@@ -35,8 +33,7 @@ namespace Vsite.CSharp.Iznimke
                 Console.WriteLine();
             }
 
-            Console.WriteLine("GOTOVO!!!");
-            Console.ReadKey(false);
+            Console.WriteLine("/nGOTOVO!!!");
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Vsite.CSharp.Iznimke
 {
-    partial class Form1
+    partial class PeriodičniBacačIznimki
     {
         /// <summary>
         /// Required designer variable.

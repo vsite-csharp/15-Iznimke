@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Vsite.CSharp.Iznimke
+﻿namespace Vsite.CSharp.Iznimke
 {
     public static class Math
     {
@@ -46,8 +44,7 @@ namespace Vsite.CSharp.Iznimke
 
             // TODO:008 Pokrenuti testove (svi testovi u grupi "BacanjeIznimke" moraju proći)
 
-            Console.WriteLine("GOTOVO!!!");
-            Console.ReadKey(false);
+            Console.WriteLine("/nGOTOVO!!!");
         }
     }
 }

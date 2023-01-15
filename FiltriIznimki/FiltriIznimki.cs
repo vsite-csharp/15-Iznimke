@@ -1,5 +1,4 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 
 namespace Vsite.CSharp.Iznimke
 {
@@ -54,8 +53,7 @@ namespace Vsite.CSharp.Iznimke
             IspišiLogaritamBroja2(-100, 10);
             IspišiLogaritamBroja2(100, -10);
 
-            Console.WriteLine("GOTOVO!!!");
-            Console.ReadKey(false);
+            Console.WriteLine("/nGOTOVO!!!");
         }
     }
 }

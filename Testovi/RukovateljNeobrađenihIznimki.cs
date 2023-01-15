@@ -1,6 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Reflection;
+﻿using System.Reflection;
 
 namespace Vsite.CSharp.Iznimke.Testovi
 {
@@ -21,7 +19,7 @@ namespace Vsite.CSharp.Iznimke.Testovi
                         continue;
                     var exception = new DivideByZeroException();
                     mi.Invoke(null, new object[] { this, new UnhandledExceptionEventArgs(exception, false) });
-                    if (ew.Count == 1 && string.Format(Iznimke.RukovateljNeobrađenihIznimki.NeuhvaćenaIznimka, exception.GetType()) == ew.GetString())
+                    if (ew?.Count == 1 && string.Format(Iznimke.RukovateljNeobrađenihIznimki.NeuhvaćenaIznimka, exception.GetType()) == ew?.GetString())
                         return true;
                 }
             }
@@ -37,9 +35,9 @@ namespace Vsite.CSharp.Iznimke.Testovi
                 Iznimke.RukovateljNeobrađenihIznimki.Main();
                 Assert.Fail();
             }
-            catch (DivideByZeroException e)
+            catch (DivideByZeroException)
             {
-                Assert.AreEqual(2, cw.Count);
+                Assert.AreEqual(2, cw?.Count);
             }
         }
     }

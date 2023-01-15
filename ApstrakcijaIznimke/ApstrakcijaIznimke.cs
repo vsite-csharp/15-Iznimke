@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Vsite.CSharp.Iznimke
+﻿namespace Vsite.CSharp.Iznimke
 {
     class ApstrakcijaIznimke
     {
@@ -24,8 +19,7 @@ namespace Vsite.CSharp.Iznimke
 
             // TODO:013 Pokrenuti i provjeriti testove (test u grupi "ApstrakcijeIznimke" mora proći)
 
-            Console.WriteLine("GOTOVO!!!");
-            Console.ReadKey(false);
+            Console.WriteLine("/nGOTOVO!!!");
         }
     }
 }

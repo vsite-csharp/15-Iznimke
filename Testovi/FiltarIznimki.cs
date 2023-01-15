@@ -1,6 +1,4 @@
-﻿using System;
-using System.Reflection;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Reflection;
 
 namespace Vsite.CSharp.Iznimke.Testovi
 {
@@ -11,21 +9,21 @@ namespace Vsite.CSharp.Iznimke.Testovi
         public void IspišiLogaritamZaIspravneArgumenteIspisujeRezultat()
         {
             FilteriIznimki.IspišiLogaritamBroja2(1000, 10);
-            Assert.AreEqual(string.Format(FilteriIznimki.FormatIspisa, 1000, 10, 3), cw.GetString());
+            Assert.AreEqual(string.Format(FilteriIznimki.FormatIspisa, 1000, 10, 3), cw?.GetString());
         }
 
         [TestMethod]
         public void IspišiLogaritamZaNegativniBrojIspisujePogrešku()
         {
             FilteriIznimki.IspišiLogaritamBroja2(-1000, 10);
-            Assert.AreEqual(FilteriIznimki.NedozvoljeniBroj, cw.GetString());
+            Assert.AreEqual(FilteriIznimki.NedozvoljeniBroj, cw?.GetString());
         }
 
         [TestMethod]
         public void IspišiLogaritamZaNegativnuBazuIspisujePogrešku()
         {
             FilteriIznimki.IspišiLogaritamBroja2(1000, -10);
-            Assert.AreEqual(string.Format(FilteriIznimki.FormatPogreške, "baza", -10), cw.GetString());
+            Assert.AreEqual(string.Format(FilteriIznimki.FormatPogreške, "baza", -10), cw?.GetString());
         }
 
         [TestMethod]

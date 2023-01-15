@@ -1,7 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections;
-using System.IO;
+﻿using System.Collections;
 
 namespace Vsite.CSharp.Iznimke.Testovi
 {
@@ -10,42 +7,42 @@ namespace Vsite.CSharp.Iznimke.Testovi
     {
         protected class ConsoleTestWriter : StringWriter
         {
-            public override void WriteLine(string text)
+            public override void WriteLine(string? value)
             {
-                output.Enqueue(text);
+                output.Enqueue(value);
             }
 
-            public override void WriteLine(int number)
+            public override void WriteLine(int value)
             {
-                output.Enqueue(number);
+                output.Enqueue(value);
             }
 
-            public override void WriteLine(double number)
+            public override void WriteLine(double value)
             {
-                output.Enqueue(number);
+                output.Enqueue(value);
             }
 
-            public override void WriteLine(object obj)
+            public override void WriteLine(object? value)
             {
-                output.Enqueue(obj);
+                output.Enqueue(value);
             }
 
-            public string GetString()
+            public string? GetString()
             {
-                return (string)output.Dequeue();
+                return (string?)output.Dequeue();
             }
 
-            public int GetInt()
+            public int? GetInt()
             {
-                return (int)output.Dequeue();
+                return (int?)output.Dequeue();
             }
 
-            public double GetDouble()
+            public double? GetDouble()
             {
-                return (double)output.Dequeue();
+                return (double?)output.Dequeue();
             }
 
-            public object GetObject()
+            public object? GetObject()
             {
                 return output.Dequeue();
             }
@@ -60,11 +57,11 @@ namespace Vsite.CSharp.Iznimke.Testovi
                 get { return output.Count; }
             }
 
-            Queue output = new Queue();
+            readonly Queue output = new Queue();
         }
 
-        protected ConsoleTestWriter cw = null;
-        protected ConsoleTestWriter ew = null;
+        protected ConsoleTestWriter? cw = null;
+        protected ConsoleTestWriter? ew = null;
 
         [TestInitialize()]
         public virtual void Initialize()
@@ -78,8 +75,8 @@ namespace Vsite.CSharp.Iznimke.Testovi
         [TestCleanup()]
         public virtual void Cleanup()
         {
-            cw.Dispose();
-            ew.Dispose();
+            cw?.Dispose();
+            ew?.Dispose();
         }
     }
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
+﻿using System.Text;
 
 namespace Vsite.CSharp.Iznimke
 {
@@ -42,6 +39,8 @@ namespace Vsite.CSharp.Iznimke
                     Console.WriteLine($"Uhvaćena iznimka: {e.GetType()}");
                 }
             }
+
+            Console.WriteLine("/nGOTOVO!!!");
         }
     }
 }

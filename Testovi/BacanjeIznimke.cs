@@ -1,7 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace Vsite.CSharp.Iznimke.Testovi
+﻿namespace Vsite.CSharp.Iznimke.Testovi
 {
     [TestClass]
     public class BacanjeIznimke
@@ -55,7 +52,7 @@ namespace Vsite.CSharp.Iznimke.Testovi
             catch (ArgumentOutOfRangeException e)
             {
                 Assert.AreEqual("broj", e.ParamName);
-                Assert.AreEqual(17, (int)e.ActualValue);
+                Assert.AreEqual(17, (int?)e.ActualValue);
             }
             catch (Exception e)
             {
