@@ -33,7 +33,7 @@
                 Console.WriteLine();
             }
 
-            Console.WriteLine("/nGOTOVO!!!");
+            Console.WriteLine("\nGOTOVO!!!");
         }
     }
 }

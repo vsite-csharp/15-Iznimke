@@ -44,7 +44,7 @@
 
             // TODO:008 Pokrenuti testove (svi testovi u grupi "BacanjeIznimke" moraju proći)
 
-            Console.WriteLine("/nGOTOVO!!!");
+            Console.WriteLine("\nGOTOVO!!!");
         }
     }
 }

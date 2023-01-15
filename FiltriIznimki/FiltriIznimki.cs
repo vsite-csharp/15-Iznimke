@@ -53,7 +53,7 @@ namespace Vsite.CSharp.Iznimke
             IspišiLogaritamBroja2(-100, 10);
             IspišiLogaritamBroja2(100, -10);
 
-            Console.WriteLine("/nGOTOVO!!!");
+            Console.WriteLine("\nGOTOVO!!!");
         }
     }
 }

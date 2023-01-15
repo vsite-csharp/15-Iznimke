@@ -25,7 +25,7 @@
         {
             IspisPovrh(1, 20);
 
-            Console.WriteLine("/nGOTOVO!!!");
+            Console.WriteLine("\nGOTOVO!!!");
         }
     }
 }

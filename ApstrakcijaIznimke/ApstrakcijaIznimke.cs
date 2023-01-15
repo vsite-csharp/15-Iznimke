@@ -19,7 +19,7 @@
 
             // TODO:013 Pokrenuti i provjeriti testove (test u grupi "ApstrakcijeIznimke" mora proći)
 
-            Console.WriteLine("/nGOTOVO!!!");
+            Console.WriteLine("\nGOTOVO!!!");
         }
     }
 }

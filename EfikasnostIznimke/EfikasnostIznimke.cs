@@ -79,7 +79,7 @@ namespace Vsite.CSharp.Iznimke
             Console.WriteLine($"Broj iznimki: {brojIznimki}, broj regularnih: {brojRegularnih}");
             Console.WriteLine();
 
-            Console.WriteLine("/nGOTOVO!!!");
+            Console.WriteLine("\nGOTOVO!!!");
         }
     }
 }

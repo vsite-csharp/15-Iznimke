@@ -25,7 +25,7 @@ namespace Vsite.CSharp.Iznimke.Testovi
 
             Exception e = new System.IO.FileNotFoundException();
             Iznimke.VišestrukiBlokoviCatch.HvatanjeIznimkePremaTipu(e);
-            Assert.AreEqual(string.Format(Iznimke.VišestrukiBlokoviCatch.FormatFiltraException, e.GetType().Name), cw?.GetString());
+            Assert.AreEqual(string.Format(Iznimke.VišestrukiBlokoviCatch.FormatBlokaException, e.GetType().Name), cw?.GetString());
         }
 
         [TestMethod]
@@ -35,7 +35,7 @@ namespace Vsite.CSharp.Iznimke.Testovi
 
             Exception e = new ArgumentOutOfRangeException();
             Iznimke.VišestrukiBlokoviCatch.HvatanjeIznimkePremaTipu(e);
-            Assert.AreEqual(string.Format(Iznimke.VišestrukiBlokoviCatch.FormatFiltraArgumentOutOfRangeException, e.GetType().Name), cw?.GetString());
+            Assert.AreEqual(string.Format(Iznimke.VišestrukiBlokoviCatch.FormatBlokaArgumentOutOfRangeException, e.GetType().Name), cw?.GetString());
         }
 
         [TestMethod]
@@ -45,7 +45,7 @@ namespace Vsite.CSharp.Iznimke.Testovi
 
             Exception e = new ArgumentException();
             Iznimke.VišestrukiBlokoviCatch.HvatanjeIznimkePremaTipu(e);
-            Assert.AreEqual(string.Format(Iznimke.VišestrukiBlokoviCatch.FormatFiltraArgumentException, e.GetType().Name), cw?.GetString());
+            Assert.AreEqual(string.Format(Iznimke.VišestrukiBlokoviCatch.FormatBlokaArgumentException, e.GetType().Name), cw?.GetString());
         }
 
         [TestMethod]
@@ -55,7 +55,7 @@ namespace Vsite.CSharp.Iznimke.Testovi
 
             Exception e = new ArgumentNullException();
             Iznimke.VišestrukiBlokoviCatch.HvatanjeIznimkePremaTipu(e);
-            Assert.AreEqual(string.Format(Iznimke.VišestrukiBlokoviCatch.FormatFiltraArgumentException, e.GetType().Name), cw?.GetString());
+            Assert.AreEqual(string.Format(Iznimke.VišestrukiBlokoviCatch.FormatBlokaArgumentException, e.GetType().Name), cw?.GetString());
         }
     }
 }

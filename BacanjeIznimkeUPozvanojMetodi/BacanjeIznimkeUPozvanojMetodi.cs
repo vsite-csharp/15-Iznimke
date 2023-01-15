@@ -11,7 +11,7 @@
             Console.WriteLine();
             Metoda1(5, 0);
 
-            Console.WriteLine("/nGOTOVO!!!");
+            Console.WriteLine("\nGOTOVO!!!");
         }
 
         public static void Metoda1(int djeljenik, int djeljitelj)

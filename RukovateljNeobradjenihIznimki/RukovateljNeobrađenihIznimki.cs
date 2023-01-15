@@ -25,14 +25,16 @@ namespace Vsite.CSharp.Iznimke
             // TODO:070 Pogledati što program radi, pokrenuti ga bez Debuggiranja (Ctrl + F5) i provjeriti ispis.
             // TODO:071 Odkomentirati donju naredbu te događaju UnhandledException pridružiti rukovatelja (handlera) koji će pozvati gornju metodu ZapišiNeuhvaćenuIznimku.
             //          Pokrenuti program i provjeriti rezultat.
-            // AppDomain.CurrentDomain.UnhandledException += 
+            // TODO:072 Provjeriti prolazi li test RukovateljNeobrađenihIznimki.
+            //AppDomain.CurrentDomain.UnhandledException +=
             Exception[] iznimke = { new ArgumentOutOfRangeException(), new ArgumentNullException(), new DivideByZeroException() };
 
             foreach (var iznimka in iznimke)
             {
                 try
                 {
-                    throw iznimka;
+                    if (iznimka != null)
+                        throw iznimka;
                 }
                 catch (ArgumentException e)
                 {
@@ -40,7 +42,7 @@ namespace Vsite.CSharp.Iznimke
                 }
             }
 
-            Console.WriteLine("/nGOTOVO!!!");
+            Console.WriteLine("\nGOTOVO!!!");
         }
     }
 }

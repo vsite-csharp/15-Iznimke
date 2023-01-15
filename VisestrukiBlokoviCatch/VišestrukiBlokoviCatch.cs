@@ -2,9 +2,9 @@
 {
     class VišestrukiBlokoviCatch
     {
-        public const string FormatFiltraException = "Filtar Exception: {0}";
-        public const string FormatFiltraArgumentException = "Filtar ArgumentException: {0}";
-        public const string FormatFiltraArgumentOutOfRangeException = "Filtar ArgumentOutOfRangeException: {0}";
+        public const string FormatBlokaException = "Blok Exception: {0}";
+        public const string FormatBlokaArgumentException = "Blok ArgumentException: {0}";
+        public const string FormatBlokaArgumentOutOfRangeException = "Blok ArgumentOutOfRangeException: {0}";
 
         public static void HvatanjeIznimkePremaTipu(Exception iznimka)
         {
@@ -19,7 +19,7 @@
             // https://docs.microsoft.com/en-us/dotnet/api/system.argumentexception
             catch (Exception e)
             {
-                Console.WriteLine(FormatFiltraException, e.GetType().Name);
+                Console.WriteLine(FormatBlokaException, e.GetType().Name);
             }
             Console.WriteLine();
         }
@@ -32,18 +32,18 @@
             // u petlji bacamo različite tipove iznimki i pratimo tko će ih uhvatiti
             // https://docs.microsoft.com/en-us/dotnet/api/system.io.filenotfoundexception
             // https://docs.microsoft.com/en-us/dotnet/api/system.argumentnullexception
-            Exception[] iznimke = new Exception[]
+            var iznimke = new List<Exception>
             {
                 new FileNotFoundException(), new ArgumentOutOfRangeException(),
                 new ArgumentException(), new ArgumentNullException()
             };
 
-            for (int i = 0; i < iznimke.Length; ++i)
+            foreach (var iznimka in iznimke)
             {
-                HvatanjeIznimkePremaTipu(iznimke[i]);
+                HvatanjeIznimkePremaTipu(iznimka);
             }
 
-            Console.WriteLine("/nGOTOVO!!!");
+            Console.WriteLine("\nGOTOVO!!!");
         }
     }
 }

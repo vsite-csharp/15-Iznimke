@@ -32,7 +32,7 @@ namespace Vsite.CSharp.Iznimke
 
             PokreniRekurziju();
 
-            Console.WriteLine("/nGOTOVO!!!");
+            Console.WriteLine("\nGOTOVO!!!");
         }
     }
 }
