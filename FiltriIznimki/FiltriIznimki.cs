@@ -22,13 +22,26 @@ namespace Vsite.CSharp.Iznimke
 
         public static void IspišiLogaritamBroja1(double broj, double baza)
         {
+            
             // TODO:050 Pokrenuti program i provjeriti ispis.
             // TODO:051 Donji ispis staviti u blok pokušaja te dodati blok koji će hvatati iznimku tipa ArgumentOutOfRangeException.
             //          Unutar bloka provjeriti je li broj <= 0 i u tom slučaju ispisati poruku NedozvoljeniBroj a u protivnom ponovno baciti iznimku.
             // TODO:052 Postaviti točku prekida (breakpoint) u blok hvatanja i pratiti izvođenje naredbi u tom bloku nakon pokretanja programa.
             // TODO:053 Dodati bloku hvatanja filter koji će hvatati ArgumentOutOfRangeException samo za broj <= 0 te maknuti ispitivanje unutar bloka (ostaviti samo naredbu za ispis).
             // TODO:054 Provjeriti tijek izvođenja programa u slučaju bačene iznimke.
-            Console.WriteLine(FormatIspisa, broj, baza, Math.Logaritam(broj, baza));
+            try
+            {
+                Console.WriteLine(FormatIspisa, broj, baza, Math.Logaritam(broj, baza));
+            }
+            catch (ArgumentOutOfRangeException ex) when (ex.ParamName == "broj" && (double?)ex.ActualValue <= 0)
+            {
+                
+                
+                    Console.WriteLine(NedozvoljeniBroj);
+               
+
+            }
+            
         }
 
         public static void IspišiLogaritamBroja2(double broj, double baza)
