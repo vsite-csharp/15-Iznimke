@@ -21,10 +21,10 @@
                 Metoda2(djeljenik, djeljitelj);
             }
             // TODO:062 Kako bi izgledalo izvođenje programa kada bi se izostavio donji blok hvatanja? Zakomenirajte ga i pokrenite program.
-            catch (Exception e)
-            {
-                Console.WriteLine($"catch(Exception) u Metoda1: {e.Message}");
-            }
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine($"catch(Exception) u Metoda1: {e.Message}");
+            //}
             finally
             {
                 Console.WriteLine("finally u Metoda1");
@@ -42,10 +42,10 @@
                 Console.WriteLine($"catch(ArgumentException) u Metoda2: {e.Message}");
             }
             // TODO:061 Kako bi izgledalo izvođenje programa kada bi se izostavio donji blok hvatanja? Zakomenirajte ga i pokrenite program.
-            catch (DivideByZeroException)
-            {
-                Console.WriteLine("catch(DivideByZeroException) u Metoda2");
-            }
+            //catch (DivideByZeroException)
+            //{
+            //    Console.WriteLine("catch(DivideByZeroException) u Metoda2");
+            //}
             finally
             {
                 Console.WriteLine($"finally u Metoda2");
