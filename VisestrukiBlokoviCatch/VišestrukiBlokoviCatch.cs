@@ -12,6 +12,16 @@
             {
                 throw iznimka;
             }
+            catch(ArgumentOutOfRangeException e)
+            {
+                Console.WriteLine(FormatBlokaArgumentOutOfRangeException, e.GetType().Name);
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine(FormatBlokaArgumentException, e.GetType().Name);
+            }
+
+
             // TODO:040 Složiti niz blokova catch tipa Exception, ArgumentOutOfRangeException i ArgumentException.
             // TODO:041 U blokove catch dodati ispise koristeći gornje formate te provjeriti koja će iznimka biti uhvaćena u kojem bloku.
             // https://docs.microsoft.com/en-us/dotnet/api/system.exception
