@@ -12,12 +12,17 @@ namespace Vsite.CSharp.Iznimke
             {
                 throw new ArgumentOutOfRangeException(nameof(broj),broj,"Argument ne smije biti negativni broj");
             }
-           
+            try
+            {
                 int rezultat = 1;
                 for (int i = 2; i <= broj; ++i)
                     rezultat *= i;
                 return rezultat;
-            
+            }
+            catch(OverflowException)
+            {
+                throw new ArgumentOutOfRangeException(nameof(broj), broj, "Argument je prevelik");
+            }
             
         }
         // ova funkcija se koristi kasnije
