@@ -11,10 +11,17 @@
                 throw new ArgumentOutOfRangeException(nameof(broj), broj, "Argument ne smije biti negativni broj");
             }
 
-            int rezultat = 1;
-            for (int i = 2; i <= broj; ++i)
-                rezultat *= i;
-            return rezultat;
+            try
+            {
+                int rezultat = 1;
+                for (int i = 2; i <= broj; ++i)
+                    rezultat *= i;            
+                return rezultat;
+            }
+            catch(OverflowException ex) 
+            {
+                throw new ArgumentOutOfRangeException(nameof(broj), broj, "Argument je prevelik");
+            }
         }
         // ova funkcija se koristi kasnije
         public static int Povrh(int n, int k)
