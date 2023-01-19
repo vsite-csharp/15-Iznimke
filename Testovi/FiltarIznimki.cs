@@ -11,7 +11,7 @@ namespace Vsite.CSharp.Iznimke.Testovi
         public void IspišiLogaritamZaIspravneArgumenteIspisujeRezultat()
         {
             FilteriIznimki.IspišiLogaritamBroja2(1000, 10);
-            Assert.AreEqual(string.Format(FilteriIznimki.FormatIspisa, 1000, 10, 3), cw.GetString());
+            Assert.AreEqual(string.Format(FilteriIznimki.FormatIspisa, 1000, 10, System.Math.Log(1000,10)), cw.GetString());
         }
 
         [TestMethod]
