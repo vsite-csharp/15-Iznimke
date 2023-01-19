@@ -1,9 +1,13 @@
-﻿namespace Vsite.CSharp.Iznimke
+﻿using System.Drawing;
+
+namespace Vsite.CSharp.Iznimke
 {
     public static class Math
     {
         public static int Faktorjel(int broj)
         {
+            if (broj < 0) throw new ArgumentOutOfRangeException(nameof(broj),broj,"Argument ne smije biti negativni broj");
+            
             // TODO:003 Dodati u metodu provjeru je li argument manji od 0 i u tom slučaju baciti iznimku tipa ArgumentOutOfRangeException s porukom: "Argument ne smije biti negativni broj"
             // TODO:004 Pokrenuti program i provjeriti što će se dogoditi.
             int rezultat = 1;
@@ -35,12 +39,32 @@
             // TODO:005 Donje pozive funkcije Faktorjel staviti u blok try i iza njega hvatati iznimke tipa ArgumentOutOfRangeException.
             // TODO:006 U bloku catch ispisati neka interesantna svojstva klase ArgumentOutOfRangeException.
             // TODO:007 Provjeriti vraćaju li nakon promjena donji pozivi metode očekivane rezultate.
+            try
+            {
+                IspišiFaktorjel(0); // trebalo bi ispisati: 0! = 1
+                IspišiFaktorjel(3); // trebalo bi ispisati: 3! = 6
+                IspišiFaktorjel(5); // trebalo bi ispisati: 5! = 120
+                IspišiFaktorjel(-1); // trebalo bi baciti iznimku!
+                IspišiFaktorjel(17); // trebalo bi baciti iznimku zbog preljeva!
+            }
+            
+            catch(OverflowException ex)
+            {
+                Console.WriteLine(ex.Message);
+                
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Console.WriteLine($"ActualValue: {ex.ActualValue}");
+                Console.WriteLine($"HResult: {ex.HResult}");
+                Console.WriteLine($"Message:{ex.Message}");
+                Console.WriteLine($"ParamName:{ex.ParamName}");
+                Console.WriteLine($"Source:{ex.Source}");
+                Console.WriteLine($"StackTrace:{ex.StackTrace}");
+                Console.WriteLine($"TargetSite:{ex.TargetSite}");
 
-            IspišiFaktorjel(0); // trebalo bi ispisati: 0! = 1
-            IspišiFaktorjel(3); // trebalo bi ispisati: 3! = 6
-            IspišiFaktorjel(5); // trebalo bi ispisati: 5! = 120
-            IspišiFaktorjel(-1); // trebalo bi baciti iznimku!
-            IspišiFaktorjel(17); // trebalo bi baciti iznimku zbog preljeva!
+            }
+
 
             // TODO:008 Pokrenuti testove (svi testovi u grupi "BacanjeIznimke" moraju proći)
 
