@@ -1,4 +1,6 @@
-﻿namespace Vsite.CSharp.Iznimke
+﻿using System.Xml;
+
+namespace Vsite.CSharp.Iznimke
 {
     class OdvajanjeGlavneLogike
     {
@@ -6,6 +8,8 @@
         {
             // TODO:020 Pokrenuti program i provjeriti što će se dogoditi.
             // TODO:021 Donje petlje obuhvatiti try-catch blokom koji će prekinuti daljnje računanje kada bude bačena iznimka. Unutar bloka hvatanja ispisati poruku o pogrešci.
+            try
+            
             {
                 for (int n = prvi; n < zadnji; ++n)
                 {
@@ -16,10 +20,16 @@
                     }
                 }
             }
+            catch(ArgumentOutOfRangeException e)
+            {
+                Console.WriteLine(e.Message);
+                
+
+            } 
         }
 
-        // TODO:022 Pokrenuti program i provjeriti ispis.
-        // TODO:023 Pokrenuti i provjeriti testove (test u grupi "OdvajanjaGlavneLogike" mora proći)
+        // :022 Pokrenuti program i provjeriti ispis.
+        // :023 Pokrenuti i provjeriti testove (test u grupi "OdvajanjaGlavneLogike" mora proći)
 
         static void Main(string[] args)
         {
