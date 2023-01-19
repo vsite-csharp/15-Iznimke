@@ -36,7 +36,7 @@ namespace Vsite.CSharp.Iznimke
 
         }
 
-        // TODO:033 Pokrenuti i provjeriti rezultate testova (2 testa iz grupe "TijekIzvođenja" moraju proći).
+        // 033 Pokrenuti i provjeriti rezultate testova (2 testa iz grupe "TijekIzvođenja" moraju proći).
 
         static void Main(string[] args)
         {
