@@ -16,7 +16,7 @@ namespace Vsite.CSharp.Iznimke
         {
             ++broj;
             if (broj % 100 == 0)
-                throw new Exception();
+                throw new Exception(g);
             return true;
         }
 
