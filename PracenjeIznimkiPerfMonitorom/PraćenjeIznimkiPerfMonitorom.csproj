@@ -8,4 +8,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="kx.PerfMon" Version="0.5.0" />
+  </ItemGroup>
+
 </Project>
