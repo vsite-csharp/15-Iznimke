@@ -2,7 +2,7 @@
 
 namespace Vsite.CSharp.Iznimke
 {
-    class KritičneIznimke
+    static class KritičneIznimke
     {
         static void RekurzivniPoziv()
         {
@@ -26,7 +26,7 @@ namespace Vsite.CSharp.Iznimke
         }
 
         // TODO:080 Pokrenuti program i provjeriti kada će biti uhvaćena iznimka.
-        static void Main(string[] args)
+        static void Main()
         {
             Console.OutputEncoding = Encoding.UTF8;
 

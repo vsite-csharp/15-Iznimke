@@ -18,14 +18,14 @@
         }
     }
 
-    class BacanjeIznimke
+    static class BacanjeIznimke
     {
         static void IspišiFaktorjel(int n)
         {
             Console.WriteLine($"{n}! = {Math.Faktorjel(n)}");
         }
 
-        static void Main(string[] args)
+        static void Main()
         {
             // TODO:000 Pokrenuti program i provjeriti ispravnost ispisanih rezultata.
             // TODO:001 Provjeriti u postavkama projekta (Properties-Build-Advanced) da se radi provjera na brojčani preljev (tj. da je uključena opcija "check for arithmetic overflow/underflow").

@@ -1,6 +1,6 @@
 ﻿namespace Vsite.CSharp.Iznimke
 {
-    class VišestrukiBlokoviCatch
+    static class VišestrukiBlokoviCatch
     {
         public const string FormatBlokaException = "Blok Exception: {0}";
         public const string FormatBlokaArgumentException = "Blok ArgumentException: {0}";
@@ -27,7 +27,7 @@
         // TODO:042 Pokrenuti program i provjeriti ispise.
         // TODO:043 Pokrenuti i provjeriti testove (4 testa u grupi "VišestrukiBlokoviCatch" moraju proći).
 
-        static void Main(string[] args)
+        static void Main()
         {
             // u petlji bacamo različite tipove iznimki i pratimo tko će ih uhvatiti
             // https://docs.microsoft.com/en-us/dotnet/api/system.io.filenotfoundexception

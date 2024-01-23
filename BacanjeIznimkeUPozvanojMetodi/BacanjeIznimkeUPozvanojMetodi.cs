@@ -4,7 +4,7 @@
     // bačena unutar pozvane metode
     class BacanjeIznimkeUPozvanojMetodi
     {
-        static void Main(string[] args)
+        static void Main()
         {
             // TODO:060 Prije izvođenja programa pokušati predvidjeti tok programa. Pokrenuti program i provjeriti ispravnost pretpostavke.
             Metoda1(8, 3);

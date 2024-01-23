@@ -1,8 +1,8 @@
 ﻿namespace Vsite.CSharp.Iznimke
 {
-    class ApstrakcijaIznimke
+    static class ApstrakcijaIznimke
     {
-        static void Main(string[] args)
+        static void Main()
         {
             // TODO:010 Provjeriti koju iznimku će baciti metoda Faktorjel u donjem kodu.
             // TODO:011 Promijeniti implementaciju metode Faktorjel tako da za slučaj preljeva baca iznimku tipa ArgumentOutOfRangeException s imenom parametra i vrijednošću argumenta.

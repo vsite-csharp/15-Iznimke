@@ -1,6 +1,6 @@
 ﻿namespace Vsite.CSharp.Iznimke
 {
-    class OdvajanjeGlavneLogike
+    static class OdvajanjeGlavneLogike
     {
         public static void IspisPovrh(int prvi, int zadnji)
         {
@@ -21,7 +21,7 @@
         // TODO:022 Pokrenuti program i provjeriti ispis.
         // TODO:023 Pokrenuti i provjeriti testove (test u grupi "OdvajanjaGlavneLogike" mora proći)
 
-        static void Main(string[] args)
+        static void Main()
         {
             IspisPovrh(1, 20);
 

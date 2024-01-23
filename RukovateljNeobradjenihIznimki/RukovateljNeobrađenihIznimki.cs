@@ -4,7 +4,7 @@ namespace Vsite.CSharp.Iznimke
 {
     // Primjer definiranja obrade UnhandledException događaja.To omogućava da registriramo neuhvaćenu iznimku (npr. 
     // zapišemo ju u datoteku), no program će i nakon toga prekinuti izvođenje s neobrađenom iznimkom!
-    class RukovateljNeobrađenihIznimki
+    static class RukovateljNeobrađenihIznimki
     {
         public const string NeuhvaćenaIznimka = "Neuhvaćena iznimka: {0}";
 

@@ -1,7 +1,7 @@
 ﻿namespace Vsite.CSharp.Iznimke
 {
     // ispis tijeka izvođenja try-catch-finally bloka
-    class TijekIzvođenja
+    static class TijekIzvođenja
     {
         public const string ZapočinjeBlokTry = "Blok try - početak";
         public const string ZavršavaBlokTry = "Blok try - kraj";
@@ -22,7 +22,7 @@
 
         // TODO:033 Pokrenuti i provjeriti rezultate testova (2 testa iz grupe "TijekIzvođenja" moraju proći).
 
-        static void Main(string[] args)
+        static void Main()
         {
             int[] djeljitelji = new int[] { 1, 2, 0 };
 

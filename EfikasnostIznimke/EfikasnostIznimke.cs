@@ -46,7 +46,7 @@ namespace Vsite.CSharp.Iznimke
 
         // TODO:102 Pokrenuti program i usporediti vremena izvođenja oba poziva metode Petlja.
         // TODO:103 Pokrenuti probram "Start without Debugging" (Ctrl + F5) i ponovno usporediti vremena.
-        static void Main(string[] args)
+        static void Main()
         {
             const int brojPonavljanja = 100000;
             // Početni dio koji poziva sve metode da aktivira JIT na njima.
