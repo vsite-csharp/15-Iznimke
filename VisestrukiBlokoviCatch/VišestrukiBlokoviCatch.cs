@@ -19,11 +19,11 @@
             // https://docs.microsoft.com/en-us/dotnet/api/system.argumentexception
             catch (ArgumentOutOfRangeException e)
             {
-                Console.WriteLine(FormatBlokaArgumentException, e.GetType().Name);
+                Console.WriteLine(FormatBlokaArgumentOutOfRangeException, e.GetType().Name);
             }
             catch (ArgumentException e)
             {
-                Console.WriteLine(FormatBlokaArgumentOutOfRangeException, e.GetType().Name);
+                Console.WriteLine(FormatBlokaArgumentException, e.GetType().Name);
             }
             catch (Exception e)
             {
