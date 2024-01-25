@@ -6,16 +6,25 @@
         {
             // :003 Dodati u metodu provjeru je li argument manji od 0 i u tom slučaju baciti iznimku tipa ArgumentOutOfRangeException s porukom: "Argument ne smije biti negativni broj"
             // :004 Pokrenuti program i provjeriti što će se dogoditi.
-            if(broj < 0) 
+            if (broj < 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(broj),broj,"Argument ne smije biti negativan broj");
+                throw new ArgumentOutOfRangeException(nameof(broj), broj, "Argument ne smije biti negativan broj");
             }
-            int rezultat = 1;
-            for (int i = 2; i <= broj; ++i)
-                rezultat *= i;
-            return rezultat;
+            // ova funkcija se koristi kasnije
+            try
+            {
+                int rezultat = 1;
+                for (int i = 2; i <= broj; ++i)
+                    rezultat *= i;
+                return rezultat;
+
+            }
+            catch (OverflowException e)
+            {
+
+                throw new ArgumentOutOfRangeException(nameof(broj), broj, "Argument ne smije biti negativan broj");
+            }
         }
-        // ova funkcija se koristi kasnije
         public static int Povrh(int n, int k)
         {
             return Faktorjel(n) / (Faktorjel(k) * Faktorjel(n - k));
