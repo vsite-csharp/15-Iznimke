@@ -14,10 +14,22 @@
             // TODO:031 Dodati kontrolne ispise gornjih poruka u svaki od tih blokova.
             // TODO:032 Pokrenuti program i provjeriti što će se ispisati.
 
-            Console.WriteLine($"{djeljenik} dijelim s {djeljitelj}");
-            Console.WriteLine(djeljenik / djeljitelj);
-            Console.WriteLine($"{djeljenik} sam podijelio s {djeljitelj}");
-
+            try
+            {
+                Console.WriteLine(ZapočinjeBlokTry);
+                Console.WriteLine($"{djeljenik} dijelim s {djeljitelj}");
+                Console.WriteLine(djeljenik / djeljitelj);
+                Console.WriteLine($"{djeljenik} sam podijelio s {djeljitelj}");
+                Console.WriteLine(ZavršavaBlokTry);
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine(BlokCatch);
+            }
+            finally
+            {
+                Console.WriteLine(BlokFinally);
+            }
         }
 
         // TODO:033 Pokrenuti i provjeriti rezultate testova (2 testa iz grupe "TijekIzvođenja" moraju proći).
