@@ -1,4 +1,6 @@
-﻿namespace Vsite.CSharp.Iznimke
+﻿using System.Threading.Channels;
+
+namespace Vsite.CSharp.Iznimke
 {
     // ispis tijeka izvođenja try-catch-finally bloka
     static class TijekIzvođenja
@@ -10,14 +12,26 @@
 
         public static void IspisTryCatchFinally(int djeljenik, int djeljitelj)
         {
-            // TODO:030 Donje naredbu umetnuti u try-blok te dodati catch blok za hvatanje iznimke u slučaju dijeljenja s 0 i finally blok. 
-            // TODO:031 Dodati kontrolne ispise gornjih poruka u svaki od tih blokova.
-            // TODO:032 Pokrenuti program i provjeriti što će se ispisati.
+            // :030 Donje naredbu umetnuti u try-blok te dodati catch blok za hvatanje iznimke u slučaju dijeljenja s 0 i finally blok. 
+            // :031 Dodati kontrolne ispise gornjih poruka u svaki od tih blokova.
+            // :032 Pokrenuti program i provjeriti što će se ispisati.
+            try
+            {
+                Console.WriteLine(ZapočinjeBlokTry);
+                Console.WriteLine($"{djeljenik} dijelim s {djeljitelj}");
+                Console.WriteLine(djeljenik / djeljitelj);
+                Console.WriteLine($"{djeljenik} sam podijelio s {djeljitelj}");
+                Console.WriteLine(ZavršavaBlokTry);
 
-            Console.WriteLine($"{djeljenik} dijelim s {djeljitelj}");
-            Console.WriteLine(djeljenik / djeljitelj);
-            Console.WriteLine($"{djeljenik} sam podijelio s {djeljitelj}");
-
+            }
+            catch (DivideByZeroException e)
+            {
+                Console.WriteLine(BlokCatch);
+            }
+            finally 
+            {
+                Console.WriteLine(BlokFinally);
+            }
         }
 
         // TODO:033 Pokrenuti i provjeriti rezultate testova (2 testa iz grupe "TijekIzvođenja" moraju proći).
