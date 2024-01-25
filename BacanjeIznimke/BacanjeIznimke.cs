@@ -6,6 +6,9 @@
         {
             // TODO:003 Dodati u metodu provjeru je li argument manji od 0 i u tom slučaju baciti iznimku tipa ArgumentOutOfRangeException s porukom: "Argument ne smije biti negativni broj"
             // TODO:004 Pokrenuti program i provjeriti što će se dogoditi.
+            if(broj < 0) {
+                throw new ArgumentOutOfRangeException(nameof(broj), broj, "Argument ne smije biti negativni broj");
+            }
             int rezultat = 1;
             for (int i = 2; i <= broj; ++i)
                 rezultat *= i;
@@ -35,13 +38,23 @@
             // TODO:005 Donje pozive funkcije Faktorjel staviti u blok try i iza njega hvatati iznimke tipa ArgumentOutOfRangeException.
             // TODO:006 U bloku catch ispisati neka interesantna svojstva klase ArgumentOutOfRangeException.
             // TODO:007 Provjeriti vraćaju li nakon promjena donji pozivi metode očekivane rezultate.
-
-            IspišiFaktorjel(0); // trebalo bi ispisati: 0! = 1
-            IspišiFaktorjel(3); // trebalo bi ispisati: 3! = 6
-            IspišiFaktorjel(5); // trebalo bi ispisati: 5! = 120
-            IspišiFaktorjel(-1); // trebalo bi baciti iznimku!
-            IspišiFaktorjel(17); // trebalo bi baciti iznimku zbog preljeva!
-
+            try
+            {
+                IspišiFaktorjel(0); // trebalo bi ispisati: 0! = 1
+                IspišiFaktorjel(3); // trebalo bi ispisati: 3! = 6
+                IspišiFaktorjel(5); // trebalo bi ispisati: 5! = 120
+                IspišiFaktorjel(-1); // trebalo bi baciti iznimku!
+                IspišiFaktorjel(17); // trebalo bi baciti iznimku zbog preljeva!
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+                Console.WriteLine($"akčual valju: {e.ActualValue}");
+                Console.WriteLine($"mesedž: {e.Message}");
+                Console.WriteLine($"Param Nejm: {e.ParamName}");
+                Console.WriteLine($"sors: {e.Source}");
+                Console.WriteLine($"stak Trejs: {e.StackTrace}");
+                Console.WriteLine($"Target sajt: {e.TargetSite}");
+            }
             // TODO:008 Pokrenuti testove (svi testovi u grupi "BacanjeIznimke" moraju proći)
 
             Console.WriteLine("\nGOTOVO!!!");
