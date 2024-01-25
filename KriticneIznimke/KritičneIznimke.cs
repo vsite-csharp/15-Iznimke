@@ -25,7 +25,7 @@ namespace Vsite.CSharp.Iznimke
             }
         }
 
-        // TODO:080 Pokrenuti program i provjeriti kada će biti uhvaćena iznimka.
+        // :080 Pokrenuti program i provjeriti kada će biti uhvaćena iznimka.
         static void Main()
         {
             Console.OutputEncoding = Encoding.UTF8;
