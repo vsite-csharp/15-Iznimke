@@ -26,7 +26,7 @@ namespace Vsite.CSharp.Iznimke
             // DID_IT:071 Odkomentirati donju naredbu te događaju UnhandledException pridružiti rukovatelja (handlera) koji će pozvati gornju metodu ZapišiNeuhvaćenuIznimku.
             //          Pokrenuti program i provjeriti rezultat.
             // DID_IT:072 Provjeriti prolazi li test RukovateljNeobrađenihIznimki.
-            //AppDomain.CurrentDomain.UnhandledException +=
+            AppDomain.CurrentDomain.UnhandledException += ZapisiNeuhvaćenuIznimku;
             Exception[] iznimke = { new ArgumentOutOfRangeException(), new ArgumentNullException(), new DivideByZeroException() };
 
             foreach (var iznimka in iznimke)
@@ -44,5 +44,10 @@ namespace Vsite.CSharp.Iznimke
 
             Console.WriteLine("\nGOTOVO!!!");
         }
+        public static void ZapisiNeuhvaćenuIznimku(object sender, UnhandledExceptionEventArgs e)
+        {
+            EvidentirajNeuhvaćenuIznimku(e);
+        }
     }
+    
 }
