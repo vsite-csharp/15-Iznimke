@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace Vsite.CSharp.Iznimke
 {
-    // TODO:100 Pogledati što rade donje dvije metode.
+    // :100 Pogledati što rade donje dvije metode.
     class EfikasnostIznimke
     {
         public static bool DodajBezIznimke(ref int broj)
@@ -22,7 +22,7 @@ namespace Vsite.CSharp.Iznimke
 
         private delegate bool Funkcija(ref int broj);
 
-        // TODO:101 Pogledati što radi metoda Petlja i kako se poziva u metodi Main.
+        // :101 Pogledati što radi metoda Petlja i kako se poziva u metodi Main.
         static (int brojIznimnih, int brojRegularnih) Petlja(Funkcija f, int n)
         {
             int zbroj = 0;
