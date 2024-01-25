@@ -4,8 +4,8 @@
     {
         public static int Faktorjel(int broj)
         {
-            // TODO:003 Dodati u metodu provjeru je li argument manji od 0 i u tom slučaju baciti iznimku tipa ArgumentOutOfRangeException s porukom: "Argument ne smije biti negativni broj"
-            // TODO:004 Pokrenuti program i provjeriti što će se dogoditi.
+            // 003 Dodati u metodu provjeru je li argument manji od 0 i u tom slučaju baciti iznimku tipa ArgumentOutOfRangeException s porukom: "Argument ne smije biti negativni broj"
+            // 004 Pokrenuti program i provjeriti što će se dogoditi.
             if(broj < 0)
             {
                 throw new ArgumentOutOfRangeException(nameof(broj), broj, "Argument ne smije biti negativni broj");
