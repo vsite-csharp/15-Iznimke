@@ -22,13 +22,26 @@ namespace Vsite.CSharp.Iznimke
 
         public static void IspišiLogaritamBroja1(double broj, double baza)
         {
-            // TODO:050 Pokrenuti program i provjeriti ispis.
-            // TODO:051 Donji ispis staviti u blok pokušaja te dodati blok koji će hvatati iznimku tipa ArgumentOutOfRangeException.
+            // DID_IT:050 Pokrenuti program i provjeriti ispis.
+            // DID_IT:051 Donji ispis staviti u blok pokušaja te dodati blok koji će hvatati iznimku tipa ArgumentOutOfRangeException.
             //          Unutar bloka provjeriti je li broj <= 0 i u tom slučaju ispisati poruku NedozvoljeniBroj a u protivnom ponovno baciti iznimku.
-            // TODO:052 Postaviti točku prekida (breakpoint) u blok hvatanja i pratiti izvođenje naredbi u tom bloku nakon pokretanja programa.
-            // TODO:053 Dodati bloku hvatanja filter koji će hvatati ArgumentOutOfRangeException samo za broj <= 0 te maknuti ispitivanje unutar bloka (ostaviti samo naredbu za ispis).
-            // TODO:054 Provjeriti tijek izvođenja programa u slučaju bačene iznimke.
+            // DID_IT:052 Postaviti točku prekida (breakpoint) u blok hvatanja i pratiti izvođenje naredbi u tom bloku nakon pokretanja programa.
+            // DID_IT:053 Dodati bloku hvatanja filter koji će hvatati ArgumentOutOfRangeException samo za broj <= 0 te maknuti ispitivanje unutar bloka (ostaviti samo naredbu za ispis).
+            // DID_IT:054 Provjeriti tijek izvođenja programa u slučaju bačene iznimke.
+            try
+            {
             Console.WriteLine(FormatIspisa, broj, baza, Math.Logaritam(broj, baza));
+            }
+            catch (ArgumentOutOfRangeException e) when (broj <= 0)
+            {
+                //if (broj <= 0)
+                //{
+                //    Console.WriteLine(NedozvoljeniBroj);
+                //}
+                //else throw;
+
+                Console.WriteLine(NedozvoljeniBroj);
+            }
         }
 
         public static void IspišiLogaritamBroja2(double broj, double baza)
