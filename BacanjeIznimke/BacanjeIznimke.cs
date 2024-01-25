@@ -6,13 +6,22 @@
         {
             // :003 Dodati u metodu provjeru je li argument manji od 0 i u tom slučaju baciti iznimku tipa ArgumentOutOfRangeException s porukom: "Argument ne smije biti negativni broj"
             // :004 Pokrenuti program i provjeriti što će se dogoditi.
+            if(broj < 0 ) throw new ArgumentOutOfRangeException(nameof(broj), broj, "Argument ne smije biti negativni broj");
 
-                if (broj < 0) throw new ArgumentOutOfRangeException(nameof(broj), broj, "Argument ne smije biti negativni broj");
-
+            try
+            {
                 int rezultat = 1;
                 for (int i = 2; i <= broj; ++i)
                     rezultat *= i;
                 return rezultat;
+            }
+            catch (OverflowException)
+            {
+
+                throw new ArgumentOutOfRangeException(nameof(broj), broj, "Argument je prevelik");
+            }
+
+
             
         }
         // ova funkcija se koristi kasnije
