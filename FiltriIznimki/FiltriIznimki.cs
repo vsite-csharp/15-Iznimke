@@ -28,7 +28,22 @@ namespace Vsite.CSharp.Iznimke
             // TODO:052 Postaviti točku prekida (breakpoint) u blok hvatanja i pratiti izvođenje naredbi u tom bloku nakon pokretanja programa.
             // TODO:053 Dodati bloku hvatanja filter koji će hvatati ArgumentOutOfRangeException samo za broj <= 0 te maknuti ispitivanje unutar bloka (ostaviti samo naredbu za ispis).
             // TODO:054 Provjeriti tijek izvođenja programa u slučaju bačene iznimke.
-            Console.WriteLine(FormatIspisa, broj, baza, Math.Logaritam(broj, baza));
+            try
+            {
+                Console.WriteLine(FormatIspisa, broj, baza, Math.Logaritam(broj, baza));
+            }
+            catch (ArgumentOutOfRangeException e) when (broj <= 0)
+            {
+                //if (broj <= 0)
+                {
+                    Console.WriteLine(NedozvoljeniBroj);
+                }
+                //else
+                {
+                    //throw;
+                }
+            }
+            
         }
 
         public static void IspišiLogaritamBroja2(double broj, double baza)
