@@ -56,7 +56,7 @@ namespace Vsite.CSharp.Iznimke
             }
         }
 
-        // TODO:055 Pokrenuti i provjeriti testove (3 testa iz grupe "FiltriranjeIznimkiPredikatom" moraju proći)
+        // DID_IT:055 Pokrenuti i provjeriti testove (3 testa iz grupe "FiltriranjeIznimkiPredikatom" moraju proći)
 
         static void Main()
         {
