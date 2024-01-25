@@ -10,17 +10,30 @@
 
         public static void IspisTryCatchFinally(int djeljenik, int djeljitelj)
         {
-            // TODO:030 Donje naredbu umetnuti u try-blok te dodati catch blok za hvatanje iznimke u slučaju dijeljenja s 0 i finally blok. 
-            // TODO:031 Dodati kontrolne ispise gornjih poruka u svaki od tih blokova.
-            // TODO:032 Pokrenuti program i provjeriti što će se ispisati.
+            // DID_IT:030 Donje naredbu umetnuti u try-blok te dodati catch blok za hvatanje iznimke u slučaju dijeljenja s 0 i finally blok. 
+            // DID_IT:031 Dodati kontrolne ispise gornjih poruka u svaki od tih blokova.
+            // DID_IT:032 Pokrenuti program i provjeriti što će se ispisati.
 
-            Console.WriteLine($"{djeljenik} dijelim s {djeljitelj}");
-            Console.WriteLine(djeljenik / djeljitelj);
-            Console.WriteLine($"{djeljenik} sam podijelio s {djeljitelj}");
+            try
+            {
+                Console.WriteLine(ZapočinjeBlokTry);
+                Console.WriteLine($"{djeljenik} dijelim s {djeljitelj}");
+                Console.WriteLine(djeljenik / djeljitelj);
+                Console.WriteLine($"{djeljenik} sam podijelio s {djeljitelj}");
+                Console.WriteLine(ZavršavaBlokTry);
+            }
+            catch (DivideByZeroException e0)
+            {
+                Console.WriteLine(BlokCatch);
+            }
+            finally
+            {
+                Console.WriteLine(BlokFinally);
+            }
 
         }
 
-        // TODO:033 Pokrenuti i provjeriti rezultate testova (2 testa iz grupe "TijekIzvođenja" moraju proći).
+        // DID_IT:033 Pokrenuti i provjeriti rezultate testova (2 testa iz grupe "TijekIzvođenja" moraju proći).
 
         static void Main()
         {
