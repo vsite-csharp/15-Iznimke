@@ -22,13 +22,29 @@ namespace Vsite.CSharp.Iznimke
 
         public static void IspišiLogaritamBroja1(double broj, double baza)
         {
-            // TODO:050 Pokrenuti program i provjeriti ispis.
-            // TODO:051 Donji ispis staviti u blok pokušaja te dodati blok koji će hvatati iznimku tipa ArgumentOutOfRangeException.
+            // :050 Pokrenuti program i provjeriti ispis.
+            // :051 Donji ispis staviti u blok pokušaja te dodati blok koji će hvatati iznimku tipa ArgumentOutOfRangeException.
             //          Unutar bloka provjeriti je li broj <= 0 i u tom slučaju ispisati poruku NedozvoljeniBroj a u protivnom ponovno baciti iznimku.
-            // TODO:052 Postaviti točku prekida (breakpoint) u blok hvatanja i pratiti izvođenje naredbi u tom bloku nakon pokretanja programa.
-            // TODO:053 Dodati bloku hvatanja filter koji će hvatati ArgumentOutOfRangeException samo za broj <= 0 te maknuti ispitivanje unutar bloka (ostaviti samo naredbu za ispis).
-            // TODO:054 Provjeriti tijek izvođenja programa u slučaju bačene iznimke.
-            Console.WriteLine(FormatIspisa, broj, baza, Math.Logaritam(broj, baza));
+            // :052 Postaviti točku prekida (breakpoint) u blok hvatanja i pratiti izvođenje naredbi u tom bloku nakon pokretanja programa.
+            // :053 Dodati bloku hvatanja filter koji će hvatati ArgumentOutOfRangeException samo za broj <= 0 te maknuti ispitivanje unutar bloka (ostaviti samo naredbu za ispis).
+            // :054 Provjeriti tijek izvođenja programa u slučaju bačene iznimke.
+            try
+            {
+                Console.WriteLine(FormatIspisa, broj, baza, Math.Logaritam(broj, baza));
+            }
+            catch (ArgumentOutOfRangeException e) when (broj <= 0)
+            {
+                //if (broj <= 0) 
+                {
+                    Console.WriteLine(NedozvoljeniBroj);
+                }
+                //else 
+                {
+                    //throw;
+                }
+
+            }
+
         }
 
         public static void IspišiLogaritamBroja2(double broj, double baza)
@@ -43,7 +59,7 @@ namespace Vsite.CSharp.Iznimke
             }
         }
 
-        // TODO:055 Pokrenuti i provjeriti testove (3 testa iz grupe "FiltriranjeIznimkiPredikatom" moraju proći)
+        // :055 Pokrenuti i provjeriti testove (3 testa iz grupe "FiltriranjeIznimkiPredikatom" moraju proći)
 
         static void Main()
         {
