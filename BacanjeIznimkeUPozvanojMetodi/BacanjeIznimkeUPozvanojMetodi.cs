@@ -6,7 +6,7 @@
     {
         static void Main()
         {
-            // TODO:060 Prije izvođenja programa pokušati predvidjeti tok programa. Pokrenuti program i provjeriti ispravnost pretpostavke.
+            // :060 Prije izvođenja programa pokušati predvidjeti tok programa. Pokrenuti program i provjeriti ispravnost pretpostavke.
             Metoda1(8, 3);
             Console.WriteLine();
             Metoda1(5, 0);
@@ -20,11 +20,14 @@
             {
                 Metoda2(djeljenik, djeljitelj);
             }
-            // TODO:062 Kako bi izgledalo izvođenje programa kada bi se izostavio donji blok hvatanja? Zakomenirajte ga i pokrenite program.
-            catch (Exception e)
-            {
-                Console.WriteLine($"catch(Exception) u Metoda1: {e.Message}");
-            }
+            // :062 Kako bi izgledalo izvođenje programa kada bi se izostavio donji blok hvatanja? Zakomenirajte ga i pokrenite program.
+
+            // iznimka nebi bila uhvaćena, nego bi se program prekinuo
+
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine($"catch(Exception) u Metoda1: {e.Message}");
+            //}
             finally
             {
                 Console.WriteLine("finally u Metoda1");
@@ -41,11 +44,14 @@
             {
                 Console.WriteLine($"catch(ArgumentException) u Metoda2: {e.Message}");
             }
-            // TODO:061 Kako bi izgledalo izvođenje programa kada bi se izostavio donji blok hvatanja? Zakomenirajte ga i pokrenite program.
-            catch (DivideByZeroException)
-            {
-                Console.WriteLine("catch(DivideByZeroException) u Metoda2");
-            }
+            // :061 Kako bi izgledalo izvođenje programa kada bi se izostavio donji blok hvatanja? Zakomenirajte ga i pokrenite program.
+            
+            // iznimka bi bila uhvaćena u Metoda1
+
+            //catch (DivideByZeroException)
+            //{
+            //    Console.WriteLine("catch(DivideByZeroException) u Metoda2");
+            //}
             finally
             {
                 Console.WriteLine($"finally u Metoda2");
